@@ -1,0 +1,84 @@
+{
+  "pipeline_type": "LeakageSafePreprocessor",
+  "device_family": "IMAGE_SENSOR",
+  "use_log1p": true,
+  "is_fitted": true,
+  "fit_metadata": {
+    "device_family": "IMAGE_SENSOR",
+    "use_log1p": true,
+    "n_training_samples": 8000,
+    "n_features": 12,
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "trap_generation_rate",
+      "srh_temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "DSNU_DN",
+      "hot_pixel_count",
+      "supply_current_mA",
+      "dark_signal_mean_DN"
+    ]
+  },
+  "transformer": {
+    "transformer_type": "Log1pTransformer",
+    "log_features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "srh_temp_normalized_24h"
+    ],
+    "is_fitted": true
+  },
+  "scaler": {
+    "scaler_type": "RobustMADScaler",
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "trap_generation_rate",
+      "srh_temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "DSNU_DN",
+      "hot_pixel_count",
+      "supply_current_mA",
+      "dark_signal_mean_DN"
+    ],
+    "medians": {
+      "value_0h": 2.795819901598323,
+      "value_24h": 2.829069475807411,
+      "delta_value_0_24h": 0.4406070008353711,
+      "growth_rate_per_hour": 0.022806689010383456,
+      "trap_generation_rate": 0.0015010618479048463,
+      "srh_temp_normalized_24h": 0.9860824943321918,
+      "robust_z_score_0h": 0.0,
+      "robust_z_score_24h": -4.3022497456940423e-16,
+      "DSNU_DN": 12.03,
+      "hot_pixel_count": 5.0,
+      "supply_current_mA": 41.99,
+      "dark_signal_mean_DN": 8.02
+    },
+    "mads": {
+      "value_0h": 0.12196099602928373,
+      "value_24h": 0.12215466102760746,
+      "delta_value_0_24h": 0.05364940538917489,
+      "growth_rate_per_hour": 0.003384406632097172,
+      "trap_generation_rate": 0.0001216968452579004,
+      "srh_temp_normalized_24h": 0.08126951073425134,
+      "robust_z_score_0h": 1.0,
+      "robust_z_score_24h": 1.0000000000000007,
+      "DSNU_DN": 3.039330000000001,
+      "hot_pixel_count": 2.9652,
+      "supply_current_mA": 2.001510000000002,
+      "dark_signal_mean_DN": 1.4974259999999997
+    },
+    "is_fitted": true
+  },
+  "artifact_sha256": "00ea1d74b9ae1bda6d839ab6062ae3e19c0e92e0d7cca720050a9126ed5da03e"
+}

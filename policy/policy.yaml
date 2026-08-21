@@ -1,0 +1,58 @@
+screening_policy:
+  name: "AstraGuard Prototype Screening Policy v1"
+  note: >
+    These thresholds are AstraGuard configurable prototype decision policy values.
+    They are NOT ISRO or MIL-STD mandated limits.
+    Production thresholds are derived from the applicable device qualification
+    specification, historical data, and QA-approved procedures.
+
+  device_family: "SPACE_MEMS_SENSOR"
+  applicable_spec_id: "ASQD-MEMS-SENS-2026"
+  observation_horizon_hours: 168
+  horizon_note: >
+    168h is the AstraGuard prototype observation horizon.
+    MIL-STD-883 Method 1015 contains condition-dependent tables
+    (e.g., 240h at 125°C for Class S). Actual qualification duration
+    is governed by the applicable device/procurement specification.
+
+  checkpoints:
+    early_checkpoint_hours: 24
+    extended_checkpoint_hours: 72
+
+  thresholds:
+    green_normal_candidate:
+      max_robust_z_score: 1.6
+      max_drift_z_score: 1.6
+      max_predicted_spec_ratio: 0.55
+      recommended_action: "Continue standard qualification procedure"
+
+    yellow_review:
+      min_robust_z_score: 1.6
+      max_robust_z_score: 2.5
+      max_predicted_spec_ratio: 0.85
+      recommended_action: "Flag for extended verification and QA review"
+
+    red_high_risk:
+      min_robust_z_score: 2.5
+      min_predicted_spec_ratio: 0.85
+      recommended_action: "Isolate for QA engineering review; do not proceed without disposition"
+
+  sensor_fault_detection:
+    frozen_channel_variance_threshold: 0.0001
+    detection_note: >
+      A measurement channel with near-zero variance over a sustained window (t > 12h)
+      is flagged as a potential instrument anomaly rather than component degradation.
+
+  class_labels:
+    0: "NOMINAL"
+    1: "THERMAL_RUNAWAY"
+    2: "MEMS_MICROCRACK"
+    3: "FREAK_OUTLIER"
+    4: "INTERMITTENT_FAULT"
+    5: "SENSOR_FAULT"
+
+  precision_recall_note: >
+    AstraGuard does not hardcode a 100% recall target as a design requirement.
+    The system selects its operating threshold based on the precision-recall
+    curve and the required recall/FPR trade-off for the screening scenario.
+    Observed recall figures are experimental results evaluated on the blind test lot.

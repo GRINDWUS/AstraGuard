@@ -1,0 +1,26 @@
+{
+  "model_version": "1.0.0",
+  "device_family": "MIXED_SIGNAL_IC",
+  "module": "MODULE_B",
+  "algorithm": "Ridge",
+  "preprocessor_version": "2.4.0",
+  "preprocessor_hash": "",
+  "artifact_file": "module_b_ridge_v1.pkl",
+  "artifact_sha256": "5e903011218938641911dfa79886051a3df2971d32dfea4b2384c813e7feece8",
+  "trained_at_utc": "2026-09-01T11:31:00.424736+00:00",
+  "training_lots": [],
+  "validation_lots": [],
+  "blind_test_lots": [],
+  "validation_metrics": {
+    "val_mae": 3.366355767931402,
+    "val_r2": 0.9988645925646595,
+    "ood_generalization_gap": 0.3092139915618719
+  },
+  "blind_test_metrics": {
+    "blind_test_mae": 3.1538174355880044,
+    "blind_test_rmse": 15.420775971554814,
+    "blind_test_mape_pct": 0.19435146836811998,
+    "blind_test_r2": 0.9987104800926445,
+    "blind_test_escaped_defect_rate_pct": 0.050658561296859174
+  }
+}

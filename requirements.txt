@@ -1,0 +1,22 @@
+# Data Processing & Math
+pandas==2.0.3
+numpy==1.24.3
+scipy==1.11.0
+
+# Machine Learning & AI Models
+xgboost==1.7.5
+scikit-learn==1.3.0
+joblib==1.3.0
+torch==2.0.1
+shap==0.42.1
+
+# Backend & Web Server
+fastapi==0.103.0
+uvicorn==0.23.0
+pydantic==2.0.3
+python-multipart==0.0.6
+python-dotenv==1.0.0
+
+# Testing & Qualification Audit
+pytest==7.4.0
+pytest-cov==4.1.0

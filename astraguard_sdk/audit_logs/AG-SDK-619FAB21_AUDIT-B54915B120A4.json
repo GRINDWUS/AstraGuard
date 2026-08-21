@@ -1,0 +1,30 @@
+{
+  "session_id": "AG-SDK-619FAB21",
+  "audit_id": "AUDIT-B54915B120A4",
+  "timestamp": "2026-08-31T13:39:36.855895",
+  "operator_id": "TEST_QA_OPERATOR",
+  "read_only_guarantee": true,
+  "context": {
+    "status": "PARTIAL_CONTEXT",
+    "resolved_device": "DIGITAL_IC",
+    "resolved_test": "THERMAL_BURN_IN",
+    "resolved_param": "IDDQ",
+    "confidence": 0.963
+  },
+  "data_quality_score": 0.0,
+  "instrument_health": "INSTRUMENT_FAULT_FROZEN_CHANNEL",
+  "recommendation": "HOLD_OPERATOR_REVIEW",
+  "evidence_trail": [
+    "[SAFETY_INTERLOCK] Context Status: ResolutionStatus.PARTIAL_CONTEXT",
+    "[QA_ALERT] Instrument QA Status: INSTRUMENT_FAULT_FROZEN_CHANNEL"
+  ],
+  "reasons": [
+    "Automated screening model interlocked: Context is ambiguous/unknown or test equipment hardware fault was detected."
+  ],
+  "components_summary": {
+    "HOLD": 0,
+    "GREEN": 0,
+    "YELLOW": 0,
+    "RED": 0
+  }
+}

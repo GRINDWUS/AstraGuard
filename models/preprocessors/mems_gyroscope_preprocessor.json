@@ -1,0 +1,85 @@
+{
+  "pipeline_type": "LeakageSafePreprocessor",
+  "device_family": "MEMS_GYROSCOPE",
+  "use_log1p": true,
+  "is_fitted": true,
+  "fit_metadata": {
+    "device_family": "MEMS_GYROSCOPE",
+    "use_log1p": true,
+    "n_training_samples": 8000,
+    "n_features": 12,
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_velocity_per_hour",
+      "logarithmic_creep_rate",
+      "viscoelastic_relaxation_index",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "scale_factor_error_ppm",
+      "noise_density_dps_rtHz",
+      "supply_current_mA",
+      "temperature_sensitivity_dps_C"
+    ]
+  },
+  "transformer": {
+    "transformer_type": "Log1pTransformer",
+    "log_features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_velocity_per_hour",
+      "logarithmic_creep_rate",
+      "viscoelastic_relaxation_index"
+    ],
+    "is_fitted": true
+  },
+  "scaler": {
+    "scaler_type": "RobustMADScaler",
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_velocity_per_hour",
+      "logarithmic_creep_rate",
+      "viscoelastic_relaxation_index",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "scale_factor_error_ppm",
+      "noise_density_dps_rtHz",
+      "supply_current_mA",
+      "temperature_sensitivity_dps_C"
+    ],
+    "medians": {
+      "value_0h": 0.05104476350630943,
+      "value_24h": 0.08402859959545098,
+      "delta_value_0_24h": 0.03445939605157082,
+      "drift_velocity_per_hour": 0.001459767354338262,
+      "logarithmic_creep_rate": 0.01974843869240571,
+      "viscoelastic_relaxation_index": 0.9824764428170318,
+      "robust_z_score_0h": 0.0,
+      "robust_z_score_24h": 0.0,
+      "scale_factor_error_ppm": 150.655,
+      "noise_density_dps_rtHz": 0.00453,
+      "supply_current_mA": 5.498,
+      "temperature_sensitivity_dps_C": 0.00796
+    },
+    "mads": {
+      "value_0h": 0.007386498791490596,
+      "value_24h": 0.0074339234407245595,
+      "delta_value_0_24h": 0.0021357849224160406,
+      "drift_velocity_per_hour": 9.19133331117413e-05,
+      "logarithmic_creep_rate": 0.0012326233175436602,
+      "viscoelastic_relaxation_index": 0.0433077027060459,
+      "robust_z_score_0h": 1.0,
+      "robust_z_score_24h": 1.0000000000000002,
+      "scale_factor_error_ppm": 24.596334000000002,
+      "noise_density_dps_rtHz": 0.0011119499999999996,
+      "supply_current_mA": 0.1971858,
+      "temperature_sensitivity_dps_C": 0.0019422060000000006
+    },
+    "is_fitted": true
+  },
+  "artifact_sha256": "34b231127f8dc3f539a83f8a6ead0120a7fe71324dcc1f60d6370369dd53c8ea"
+}

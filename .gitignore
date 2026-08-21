@@ -1,0 +1,109 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Pytest / Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.nox/
+.tox/
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Documentation / Internal Notes / Research Drafts
+AstraGuard_Complete_Documentation/
+Instructions/
+docs/
+readme/
+DASHBOARD_SPECIFICATION_ISRO.md
+semiconductor_qualification_research_brief.md
+AstraGuard_SIH26170_Complete_Solution_Document.docx
+
+# Local Logs & Experiment Cache Outputs
+error_log.txt
+exp_*.txt
+exp_summary.txt
+experiment_summary.txt
+*_log.txt
+*_log2.txt
+*_output.txt
+*_output_utf8.txt
+*_results.txt
+separability_results.txt
+test_output.txt
+unit_test_validation.csv
+
+# Scratch / Temp Server Recovery Files
+deleted_server_code.py
+deleted_utf8.py
+old_server*.py
+old_server*.diff
+server_*.py
+server_*.diff
+
+# Temporary SDK audit challenge CSVs
+sdk_corrupted_challenge.csv
+sdkdemo.csv
+
+# Per-session audit log files (only latest_audit.json is meaningful)
+astraguard_sdk/audit_logs/AG-SDK-*.json
+
+# Research & auxiliary scripts (not part of deployable product)
+scripts/
+
+# Trained model binaries & inference artifacts (tracked for out-of-the-box SDK & test execution)
+models/*
+!models/module_b/
+!models/module_b/**
+!models/preprocessors/
+!models/preprocessors/**
+!models/registry/
+!models/registry/**
+
+# ASQD 2.4 dataset — track all except the 17MB training split (not needed for SDK demo)
+# The blind_test, validation, lot CSVs and manifest are needed for SDK testing on other devices
+ASQD_2.4/asqd_24_train.csv
+
+# Large generated CSV datasets (re-generatable from dataset_generator/)
+validation/dataset/*.csv

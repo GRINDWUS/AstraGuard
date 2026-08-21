@@ -1,0 +1,26 @@
+{
+  "model_version": "1.0.0",
+  "device_family": "MEMS_GYROSCOPE",
+  "module": "MODULE_B",
+  "algorithm": "Ridge",
+  "preprocessor_version": "2.4.0",
+  "preprocessor_hash": "",
+  "artifact_file": "module_b_ridge_v1.pkl",
+  "artifact_sha256": "93902bfe83cb6fa6f5f6c30e3e885edebc44d08469f69d26bd9313f1b017fb2f",
+  "trained_at_utc": "2026-09-01T11:31:00.425935+00:00",
+  "training_lots": [],
+  "validation_lots": [],
+  "blind_test_lots": [],
+  "validation_metrics": {
+    "val_mae": 0.014539639983888531,
+    "val_r2": 0.06403984774398996,
+    "ood_generalization_gap": 0.00021661216980784978
+  },
+  "blind_test_metrics": {
+    "blind_test_mae": 0.01424188476842132,
+    "blind_test_rmse": 0.04322781926320994,
+    "blind_test_mape_pct": 8.138394678465124,
+    "blind_test_r2": 0.09759994413563144,
+    "blind_test_escaped_defect_rate_pct": 0.0
+  }
+}

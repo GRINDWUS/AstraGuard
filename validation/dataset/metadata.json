@@ -1,0 +1,13 @@
+{
+  "total_components": 10000,
+  "train_components": 8000,
+  "val_components": 1000,
+  "test_components": 2000,
+  "nominal_rate": 0.965,
+  "failure_rate": 0.035,
+  "activation_energy_baseline_eV": 0.68,
+  "standards": [
+    "MIL-STD-883 Method 1015",
+    "ESCC 9000 Level B/S"
+  ]
+}

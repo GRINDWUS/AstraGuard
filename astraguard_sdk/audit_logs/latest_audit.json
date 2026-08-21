@@ -1,0 +1,32 @@
+{
+  "session_id": "AG-SDK-464A0C9F",
+  "audit_id": "AUDIT-C060E139FB2F",
+  "timestamp": "2026-09-02T10:56:32.892211",
+  "operator_id": "TEST_SYSTEM_OP",
+  "read_only_guarantee": true,
+  "context": {
+    "status": "PARTIAL_CONTEXT",
+    "resolved_device": "DIGITAL_IC",
+    "resolved_test": "THERMAL_BURN_IN",
+    "resolved_param": "IDDQ",
+    "confidence": 0.963
+  },
+  "data_quality_score": 1.0,
+  "instrument_health": "INSTRUMENT_HEALTHY",
+  "recommendation": "GREEN_NORMAL_CANDIDATE",
+  "evidence_trail": [
+    "[CONTEXT] Resolved Device: DIGITAL_IC via ResolutionStatus.PARTIAL_CONTEXT (Conf: 0.96)",
+    "[ROUTER] Active Anomaly Model: RobustZScorePopulationDetector",
+    "[ROUTER] Active Forecaster: PhysicsArrheniusTemporalForecaster",
+    "[METRICS] Evaluated 1 components | Green: 1, Yellow: 0, Red: 0",
+    "[BENCHMARK] Chamber Hours Saved: 85.71%"
+  ],
+  "reasons": [
+    "100% of evaluated components meet population stability and 168h forecast thresholds."
+  ],
+  "components_summary": {
+    "GREEN": 1,
+    "YELLOW": 0,
+    "RED": 0
+  }
+}

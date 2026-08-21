@@ -1,0 +1,26 @@
+{
+  "model_version": "1.0.0",
+  "device_family": "PRECISION_VOLTAGE_REF",
+  "module": "MODULE_B",
+  "algorithm": "Ridge",
+  "preprocessor_version": "2.4.0",
+  "preprocessor_hash": "",
+  "artifact_file": "module_b_ridge_v1.pkl",
+  "artifact_sha256": "fd13d36cfee23b3e6b95aabb38cf8ba60cc3d96275576805c041de1988d7e897",
+  "trained_at_utc": "2026-09-01T11:31:00.435128+00:00",
+  "training_lots": [],
+  "validation_lots": [],
+  "blind_test_lots": [],
+  "validation_metrics": {
+    "val_mae": 5.932014530243207,
+    "val_r2": 0.9998939062073494,
+    "ood_generalization_gap": 0.0644686629875526
+  },
+  "blind_test_metrics": {
+    "blind_test_mae": 5.6909122367416405,
+    "blind_test_rmse": 18.856874846472564,
+    "blind_test_mape_pct": 0.0931283135549142,
+    "blind_test_r2": 0.9998867183625119,
+    "blind_test_escaped_defect_rate_pct": 0.0
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "pipeline_type": "LeakageSafePreprocessor",
+  "device_family": "MIXED_SIGNAL_IC",
+  "use_log1p": true,
+  "is_fitted": true,
+  "fit_metadata": {
+    "device_family": "MIXED_SIGNAL_IC",
+    "use_log1p": true,
+    "n_training_samples": 8000,
+    "n_features": 11,
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "degradation_ratio_24h_0h",
+      "temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "analog_digital_interaction_ratio",
+      "v_offset_24h",
+      "snr_24h"
+    ]
+  },
+  "transformer": {
+    "transformer_type": "Log1pTransformer",
+    "log_features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "temp_normalized_24h",
+      "analog_digital_interaction_ratio"
+    ],
+    "is_fitted": true
+  },
+  "scaler": {
+    "scaler_type": "RobustMADScaler",
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "degradation_ratio_24h_0h",
+      "temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "analog_digital_interaction_ratio",
+      "v_offset_24h",
+      "snr_24h"
+    ],
+    "medians": {
+      "value_0h": 1.113845668096208,
+      "value_24h": 7.364314403286315,
+      "delta_value_0_24h": 7.363013508433751,
+      "growth_rate_per_hour": 4.199442824731278,
+      "degradation_ratio_24h_0h": 770.8667459434363,
+      "temp_normalized_24h": 1.1140664434116396,
+      "robust_z_score_0h": -7.646877922540263e-16,
+      "robust_z_score_24h": 0.0,
+      "analog_digital_interaction_ratio": 7.323239544541721,
+      "v_offset_24h": -0.0001,
+      "snr_24h": 35.01
+    },
+    "mads": {
+      "value_0h": 0.09563005524465361,
+      "value_24h": 0.14248537880162904,
+      "delta_value_0_24h": 0.14250547431747865,
+      "growth_rate_per_hour": 0.14049598770194363,
+      "degradation_ratio_24h_0h": 5.682468831395064,
+      "temp_normalized_24h": 0.09582763148529402,
+      "robust_z_score_0h": 0.9999999999999989,
+      "robust_z_score_24h": 1.0,
+      "analog_digital_interaction_ratio": 0.14650133731829285,
+      "v_offset_24h": 0.05292882,
+      "snr_24h": 1.3046880000000036
+    },
+    "is_fitted": true
+  },
+  "artifact_sha256": "61ded99b40e22324fadbfdd6b775610c35a4493efdafba7672635bc74a6a2304"
+}

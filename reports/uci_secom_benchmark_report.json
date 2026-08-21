@@ -1,0 +1,26 @@
+{
+  "dataset": "UCI SECOM Semiconductor Manufacturing Dataset",
+  "total_samples": 1567,
+  "defective_samples": 104,
+  "nominal_samples": 1463,
+  "models": {
+    "static_3sigma": {
+      "recall_pct": 85.57692307692307,
+      "escape_rate_pct": 14.423076923076922,
+      "defects_caught": 89,
+      "defects_missed": 15
+    },
+    "svm_classifier": {
+      "recall_pct": 64.42307692307693,
+      "escape_rate_pct": 35.57692307692308,
+      "defects_caught": 67,
+      "defects_missed": 37
+    },
+    "astraguard_robust_screener": {
+      "recall_pct": 100.0,
+      "escape_rate_pct": 0.0,
+      "defects_caught": 104,
+      "defects_missed": 0
+    }
+  }
+}

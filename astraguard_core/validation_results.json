@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "train_lots": [
+      "LOT_2026_01",
+      "LOT_2026_02",
+      "LOT_2026_03",
+      "LOT_2026_04",
+      "LOT_2026_05"
+    ],
+    "blind_test_lot": "LOT_2026_07",
+    "train_n": 5000,
+    "blind_test_n": 1000,
+    "disclaimer": "All numbers produced by running the trained model on a held-out synthetic dataset. Results reflect prototype feasibility, not space-grade hardware certification."
+  },
+  "section_a_burnin_prediction": {
+    "regression": {
+      "mae_ua": 108.8607,
+      "rmse_ua": 880.6338,
+      "valid_pairs": 1000
+    },
+    "confusion": {
+      "TP": 34,
+      "FP": 966,
+      "FN": 0,
+      "TN": 0
+    },
+    "classification": {
+      "recall_pct": 100.0,
+      "fnr_pct": 0.0,
+      "fpr_pct": 100.0,
+      "precision_pct": 3.4,
+      "accuracy_pct": 3.4
+    },
+    "tier_counts": {
+      "YELLOW_EXTENDED_TEST": 951,
+      "RED_EARLY_REJECT": 49,
+      "GREEN_AUTO_PASS": 0
+    },
+    "chamber_savings": {
+      "traditional_hours": 168000,
+      "astraguard_hours": 69648,
+      "saved_hours": 98352,
+      "saved_percent": 58.54
+    }
+  },
+  "section_a2_threshold_sweep": [
+    {
+      "threshold_ua": 25,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 30,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 35,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 40,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 45,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 50,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 55,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 60,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    },
+    {
+      "threshold_ua": 70,
+      "recall_pct": 94.12,
+      "fnr_pct": 5.88,
+      "fpr_pct": 100.0,
+      "n_flagged": 998,
+      "estimated_saved_pct": 0.2
+    }
+  ],
+  "section_a3_noise_robustness": [
+    {
+      "noise_sigma_ua": 0.0,
+      "recall_pct": 100.0,
+      "fnr_pct": 0.0
+    },
+    {
+      "noise_sigma_ua": 0.1,
+      "recall_pct": 100.0,
+      "fnr_pct": 0.0
+    },
+    {
+      "noise_sigma_ua": 0.5,
+      "recall_pct": 100.0,
+      "fnr_pct": 0.0
+    },
+    {
+      "noise_sigma_ua": 1.0,
+      "recall_pct": 100.0,
+      "fnr_pct": 0.0
+    },
+    {
+      "noise_sigma_ua": 2.0,
+      "recall_pct": 100.0,
+      "fnr_pct": 0.0
+    }
+  ],
+  "section_a4_missing_data": {
+    "nan_10pct_crash": false,
+    "negative_val_crash": false
+  },
+  "section_b_ate_latency": {
+    "single_inference_ms": {
+      "mean": 14.0,
+      "p50": 13.38,
+      "p95": 19.62,
+      "p99": 22.66
+    },
+    "batch_inference_ms": 51.05,
+    "batch_throughput_per_sec": 19587
+  },
+  "section_c_telemetry_replay": {
+    "HEALTHY_NOMINAL": {
+      "timeline": [
+        {
+          "day": 1,
+          "iddq_ua": 11.7,
+          "health_score": 99.7
+        },
+        {
+          "day": 30,
+          "iddq_ua": 11.8,
+          "health_score": 98.7
+        },
+        {
+          "day": 60,
+          "iddq_ua": 11.9,
+          "health_score": 97.7
+        },
+        {
+          "day": 90,
+          "iddq_ua": 12.0,
+          "health_score": 96.7
+        },
+        {
+          "day": 120,
+          "iddq_ua": 12.1,
+          "health_score": 95.7
+        },
+        {
+          "day": 150,
+          "iddq_ua": 12.2,
+          "health_score": 94.7
+        },
+        {
+          "day": 180,
+          "iddq_ua": 12.3,
+          "health_score": 93.7
+        },
+        {
+          "day": 210,
+          "iddq_ua": 12.4,
+          "health_score": 92.8
+        }
+      ],
+      "warning_day": null,
+      "critical_day": null,
+      "lead_time_days": null
+    },
+    "GRADUAL_DRIFT": {
+      "timeline": [
+        {
+          "day": 1,
+          "iddq_ua": 11.7,
+          "health_score": 99.7
+        },
+        {
+          "day": 30,
+          "iddq_ua": 12.1,
+          "health_score": 95.7
+        },
+        {
+          "day": 60,
+          "iddq_ua": 13.0,
+          "health_score": 87.2
+        },
+        {
+          "day": 90,
+          "iddq_ua": 14.5,
+          "health_score": 74.8
+        },
+        {
+          "day": 120,
+          "iddq_ua": 16.2,
+          "health_score": 62.8
+        },
+        {
+          "day": 150,
+          "iddq_ua": 18.8,
+          "health_score": 48.0
+        },
+        {
+          "day": 180,
+          "iddq_ua": 22.1,
+          "health_score": 34.2
+        },
+        {
+          "day": 210,
+          "iddq_ua": 26.4,
+          "health_score": 22.0
+        }
+      ],
+      "warning_day": 150,
+      "critical_day": 210,
+      "lead_time_days": 60
+    },
+    "RAPID_RUNAWAY": {
+      "timeline": [
+        {
+          "day": 1,
+          "iddq_ua": 11.7,
+          "health_score": 99.7
+        },
+        {
+          "day": 30,
+          "iddq_ua": 13.5,
+          "health_score": 82.8
+        },
+        {
+          "day": 60,
+          "iddq_ua": 19.2,
+          "health_score": 46.1
+        },
+        {
+          "day": 90,
+          "iddq_ua": 35.0,
+          "health_score": 9.1
+        },
+        {
+          "day": 120,
+          "iddq_ua": 68.0,
+          "health_score": 0.3
+        },
+        {
+          "day": 150,
+          "iddq_ua": 120.0,
+          "health_score": 0.0
+        },
+        {
+          "day": 180,
+          "iddq_ua": 210.0,
+          "health_score": 0.0
+        },
+        {
+          "day": 210,
+          "iddq_ua": 380.0,
+          "health_score": 0.0
+        }
+      ],
+      "warning_day": 60,
+      "critical_day": 90,
+      "lead_time_days": 30
+    }
+  }
+}

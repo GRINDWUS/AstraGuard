@@ -1,0 +1,352 @@
+[
+  {
+    "device_family": "DIGITAL_IC",
+    "failure_mode": "DIELECTRIC_OSCILLATION",
+    "sample_count": 35,
+    "mae": 28.426321909965868,
+    "decisions": {
+      "RED": 14,
+      "YELLOW": 19,
+      "GREEN": 2
+    },
+    "recall_pct": 94.28571428571428,
+    "escape_rate_pct": 5.714285714285714,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "DIGITAL_IC",
+    "failure_mode": "ELECTROMIGRATION",
+    "sample_count": 38,
+    "mae": 46.85565289784544,
+    "decisions": {
+      "RED": 16,
+      "YELLOW": 18,
+      "GREEN": 4
+    },
+    "recall_pct": 89.47368421052632,
+    "escape_rate_pct": 10.526315789473683,
+    "observability_classification": "PARTIALLY_OBSERVABLE"
+  },
+  {
+    "device_family": "DIGITAL_IC",
+    "failure_mode": "NOMINAL",
+    "sample_count": 3879,
+    "mae": 28.398454614043697,
+    "decisions": {
+      "RED": 1737,
+      "YELLOW": 1755,
+      "GREEN": 387
+    },
+    "recall_pct": 9.97679814385151,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "NOMINAL_BASELINE"
+  },
+  {
+    "device_family": "DIGITAL_IC",
+    "failure_mode": "SPATIAL_OUTLIER",
+    "sample_count": 14,
+    "mae": 212.46574103032523,
+    "decisions": {
+      "RED": 14,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "DIGITAL_IC",
+    "failure_mode": "THERMAL_RUNAWAY",
+    "sample_count": 34,
+    "mae": 24.65790048864972,
+    "decisions": {
+      "RED": 29,
+      "YELLOW": 5,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "MIXED_SIGNAL_IC",
+    "failure_mode": "DIELECTRIC_OSCILLATION",
+    "sample_count": 31,
+    "mae": 25.555201911614798,
+    "decisions": {
+      "RED": 31,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "MIXED_SIGNAL_IC",
+    "failure_mode": "ELECTROMIGRATION",
+    "sample_count": 25,
+    "mae": 47.35338247235339,
+    "decisions": {
+      "RED": 24,
+      "YELLOW": 0,
+      "GREEN": 1
+    },
+    "recall_pct": 96.0,
+    "escape_rate_pct": 4.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "MIXED_SIGNAL_IC",
+    "failure_mode": "NOMINAL",
+    "sample_count": 1913,
+    "mae": 32.13457690327001,
+    "decisions": {
+      "RED": 1848,
+      "YELLOW": 7,
+      "GREEN": 58
+    },
+    "recall_pct": 3.031887088342927,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "NOMINAL_BASELINE"
+  },
+  {
+    "device_family": "MIXED_SIGNAL_IC",
+    "failure_mode": "SPATIAL_OUTLIER",
+    "sample_count": 12,
+    "mae": 973.9835730367244,
+    "decisions": {
+      "RED": 12,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "MIXED_SIGNAL_IC",
+    "failure_mode": "THERMAL_RUNAWAY",
+    "sample_count": 19,
+    "mae": 31.190245607854038,
+    "decisions": {
+      "RED": 19,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "MEMS_GYROSCOPE",
+    "failure_mode": "MEMS_STICTION_ONSET",
+    "sample_count": 39,
+    "mae": 0.0041003339554987655,
+    "decisions": {
+      "RED": 0,
+      "YELLOW": 0,
+      "GREEN": 39
+    },
+    "recall_pct": 0.0,
+    "escape_rate_pct": 100.0,
+    "observability_classification": "PHYSICALLY_UNOBSERVABLE_AT_96H"
+  },
+  {
+    "device_family": "MEMS_GYROSCOPE",
+    "failure_mode": "NOMINAL",
+    "sample_count": 1902,
+    "mae": 0.0025554773065895138,
+    "decisions": {
+      "RED": 0,
+      "YELLOW": 0,
+      "GREEN": 1902
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "NOMINAL_BASELINE"
+  },
+  {
+    "device_family": "MEMS_GYROSCOPE",
+    "failure_mode": "PACKAGING_STRESS_RELAXATION",
+    "sample_count": 29,
+    "mae": 0.0013759956715550755,
+    "decisions": {
+      "RED": 28,
+      "YELLOW": 0,
+      "GREEN": 1
+    },
+    "recall_pct": 96.55172413793103,
+    "escape_rate_pct": 3.4482758620689653,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "MEMS_GYROSCOPE",
+    "failure_mode": "SPATIAL_OUTLIER",
+    "sample_count": 11,
+    "mae": 0.012345842424242344,
+    "decisions": {
+      "RED": 11,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "MEMS_GYROSCOPE",
+    "failure_mode": "THERMAL_RUNAWAY",
+    "sample_count": 19,
+    "mae": 0.002589692683096632,
+    "decisions": {
+      "RED": 0,
+      "YELLOW": 0,
+      "GREEN": 19
+    },
+    "recall_pct": 0.0,
+    "escape_rate_pct": 100.0,
+    "observability_classification": "PHYSICALLY_UNOBSERVABLE_AT_96H"
+  },
+  {
+    "device_family": "IMAGE_SENSOR",
+    "failure_mode": "DARK_CURRENT_SPIKE_GROWTH",
+    "sample_count": 24,
+    "mae": 3.210922596424588,
+    "decisions": {
+      "RED": 24,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "IMAGE_SENSOR",
+    "failure_mode": "DIELECTRIC_OSCILLATION",
+    "sample_count": 18,
+    "mae": 1.56243167078915,
+    "decisions": {
+      "RED": 2,
+      "YELLOW": 9,
+      "GREEN": 7
+    },
+    "recall_pct": 61.111111111111114,
+    "escape_rate_pct": 38.88888888888889,
+    "observability_classification": "PARTIALLY_OBSERVABLE"
+  },
+  {
+    "device_family": "IMAGE_SENSOR",
+    "failure_mode": "NOMINAL",
+    "sample_count": 1914,
+    "mae": 1.5798868111564959,
+    "decisions": {
+      "RED": 93,
+      "YELLOW": 821,
+      "GREEN": 1000
+    },
+    "recall_pct": 52.2466039707419,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "NOMINAL_BASELINE"
+  },
+  {
+    "device_family": "IMAGE_SENSOR",
+    "failure_mode": "SPATIAL_OUTLIER",
+    "sample_count": 20,
+    "mae": 3.98511326319385,
+    "decisions": {
+      "RED": 20,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "IMAGE_SENSOR",
+    "failure_mode": "THERMAL_RUNAWAY",
+    "sample_count": 24,
+    "mae": 8.394307502688198,
+    "decisions": {
+      "RED": 24,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "PRECISION_VOLTAGE_REF",
+    "failure_mode": "DIELECTRIC_OSCILLATION",
+    "sample_count": 20,
+    "mae": 295.58008891034143,
+    "decisions": {
+      "RED": 17,
+      "YELLOW": 2,
+      "GREEN": 1
+    },
+    "recall_pct": 95.0,
+    "escape_rate_pct": 5.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "PRECISION_VOLTAGE_REF",
+    "failure_mode": "ELECTROMIGRATION",
+    "sample_count": 17,
+    "mae": 386.32461643990797,
+    "decisions": {
+      "RED": 16,
+      "YELLOW": 1,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "PRECISION_VOLTAGE_REF",
+    "failure_mode": "NOMINAL",
+    "sample_count": 1929,
+    "mae": 277.46835175914845,
+    "decisions": {
+      "RED": 1408,
+      "YELLOW": 447,
+      "GREEN": 74
+    },
+    "recall_pct": 3.836184551581141,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "NOMINAL_BASELINE"
+  },
+  {
+    "device_family": "PRECISION_VOLTAGE_REF",
+    "failure_mode": "SPATIAL_OUTLIER",
+    "sample_count": 11,
+    "mae": 5211.269441304752,
+    "decisions": {
+      "RED": 11,
+      "YELLOW": 0,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  },
+  {
+    "device_family": "PRECISION_VOLTAGE_REF",
+    "failure_mode": "THERMAL_RUNAWAY",
+    "sample_count": 23,
+    "mae": 182.59462612701807,
+    "decisions": {
+      "RED": 17,
+      "YELLOW": 6,
+      "GREEN": 0
+    },
+    "recall_pct": 100.0,
+    "escape_rate_pct": 0.0,
+    "observability_classification": "HIGHLY_OBSERVABLE"
+  }
+]

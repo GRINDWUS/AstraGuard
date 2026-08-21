@@ -1,0 +1,26 @@
+{
+  "model_version": "1.0.0",
+  "device_family": "IMAGE_SENSOR",
+  "module": "MODULE_B",
+  "algorithm": "RandomForest",
+  "preprocessor_version": "2.4.0",
+  "preprocessor_hash": "",
+  "artifact_file": "module_b_randomforest_v1.pkl",
+  "artifact_sha256": "94162a2345a912454639635754a4eaa691e34c26fbbcc97a808762a4b96490e0",
+  "trained_at_utc": "2026-09-01T11:31:00.433095+00:00",
+  "training_lots": [],
+  "validation_lots": [],
+  "blind_test_lots": [],
+  "validation_metrics": {
+    "val_mae": 3.2006475964744405,
+    "val_r2": 0.10525890167173402,
+    "ood_generalization_gap": 0.694132378713618
+  },
+  "blind_test_metrics": {
+    "blind_test_mae": 3.058427101141964,
+    "blind_test_rmse": 9.87299438638151,
+    "blind_test_mape_pct": 12.077237773727626,
+    "blind_test_r2": 0.10310215638269515,
+    "blind_test_escaped_defect_rate_pct": 70.58823529411765
+  }
+}

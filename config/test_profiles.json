@@ -1,0 +1,115 @@
+{
+  "_schema_version": "2.3",
+  "_audit_note": "Evidence classification: [PE]=Physically Established, [SP]=Standard/Procedure Dependent, [FA]=Facility/ATE Dependent, [SA]=Synthetic Assumption, [UA]=Unknown/Requires Authoritative Documentation",
+  "test_profiles": {
+    "THERMAL_BURN_IN": {
+      "test_type": "THERMAL_BURN_IN",
+      "display_name": "Steady-State High-Temperature Operating Life (HTOL / Burn-In)",
+      "_note": "Canonical burn-in: DUT biased at elevated temperature for extended time. Static operating conditions. Primary test for DIGITAL_IC reliability screening.",
+      "standard_reference": "[SP] MIL-STD-883 Method 1015 (Burn-In); ESCC 9000 Level S/B; NASA EEE-INST-002 Sec 4.",
+      "is_time_series": true,
+      "default_checkpoints_hours": [0.0, 24.0, 96.0, 168.0],
+      "_checkpoint_note": "[SP] Checkpoint intervals are PS #26170 mandated (0h, 24h, 96h, 168h). Duration and temperature are device/class specific [UA].",
+      "stress_conditions": {
+        "temperature_c": { "value": 125.0, "evidence": "[SP] MIL-STD-883 M1015 specifies 125°C as standard; actual limit device-specific [UA]" },
+        "bias_voltage": { "value": "VCC_rated", "evidence": "[SP] Applied at rated VCC; derating per NASA EEE-INST-002 for space screening" },
+        "duration_hours": { "value": 168.0, "evidence": "[SP] 168h is a common space-grade duration; mission-specific [UA]" }
+      },
+      "measured_parameters": {
+        "DIGITAL_IC": ["IDDQ", "ICC_active", "propagation_delay"],
+        "MIXED_SIGNAL_IC": ["IDDQ", "ICC_active", "DNL", "INL"]
+      },
+      "required_channels": ["DUT_MEASUREMENT", "CHAMBER_TEMP", "BIAS_VOLTAGE"],
+      "observable_signature": {
+        "units": ["uA", "mA", "nA"],
+        "keywords": ["IDDQ", "leakage", "current", "icc"]
+      },
+      "applicable_device_families": ["DIGITAL_IC", "MIXED_SIGNAL_IC"]
+    },
+
+    "MEMS_THERMAL_STRESS": {
+      "test_type": "MEMS_THERMAL_STRESS",
+      "display_name": "MEMS Device Thermal Stress Screening",
+      "_note": "MEMS sensors are subjected to controlled thermal stress to trigger viscoelastic stress relaxation and accelerate ZRO drift stabilization. Test sequence and conditions differ from IC burn-in [SP].",
+      "standard_reference": "[SP] General aerospace inertial sensor qualification practice; device-specific spec [UA]. ESCC 9000 storage/operational temperature. Not standardized identically to MIL-STD-883 IC burn-in [UA].",
+      "is_time_series": true,
+      "default_checkpoints_hours": [0.0, 24.0, 96.0, 168.0],
+      "_checkpoint_note": "[SA] Applied same PS-compatible checkpoint structure for dataset consistency. Actual MEMS screening duration is facility-dependent [UA].",
+      "stress_conditions": {
+        "temperature_c": { "value": 85.0, "evidence": "[PE/SA] Lower than IC burn-in; MEMS mechanical reliability requires avoiding stiction at high T. Exact value facility-dependent [UA]" },
+        "humidity_pct": { "value": 0.0, "evidence": "[SP] Dry environment required; moisture causes MEMS stiction" },
+        "duration_hours": { "value": 168.0, "evidence": "[SA] Applied for cross-lot comparability; actual duration [UA]" }
+      },
+      "measured_parameters": {
+        "MEMS_GYROSCOPE": ["zero_rate_offset", "scale_factor_error", "noise_density", "supply_current", "temperature_sensitivity"]
+      },
+      "required_channels": ["DUT_MEASUREMENT", "CHAMBER_TEMP", "BIAS_VOLTAGE"],
+      "observable_signature": {
+        "units": ["dps", "ppm", "dps/rtHz", "mA"],
+        "keywords": ["ZRO", "zero_rate", "bias", "gyro", "sensitivity", "noise"]
+      },
+      "applicable_device_families": ["MEMS_GYROSCOPE"]
+    },
+
+    "IMAGE_SENSOR_DARK_CURRENT_TEST": {
+      "test_type": "IMAGE_SENSOR_DARK_CURRENT_TEST",
+      "display_name": "CMOS Image Sensor Dark Current & Non-Uniformity Characterization",
+      "_note": "Image sensors measured in dark conditions at elevated temperature to accelerate and characterize dark current. Not the same as IC burn-in biasing [SP].",
+      "standard_reference": "[SP] EMVA 1288 standard for imager characterization; GSFC-STD-7000 for space imaging systems. Device-specific qualification [UA].",
+      "is_time_series": true,
+      "default_checkpoints_hours": [0.0, 24.0, 96.0, 168.0],
+      "_checkpoint_note": "[SA] Applied for cross-lot comparability. Actual dark current test is typically shorter; long-exposure test for trap identification [UA].",
+      "stress_conditions": {
+        "temperature_c": { "value": 60.0, "evidence": "[PE] Dark current doubles approximately every 8-10°C; 60°C represents accelerated but non-destructive condition" },
+        "shutter_state": { "value": "CLOSED", "evidence": "[SP] Dark measurement requires light-tight enclosure" },
+        "integration_time_ms": { "value": 100.0, "evidence": "[SA] Selected for measurable dark signal accumulation; device-specific [UA]" }
+      },
+      "measured_parameters": {
+        "IMAGE_SENSOR": ["dark_current_density", "DSNU", "hot_pixel_count", "supply_current", "dark_signal_mean"]
+      },
+      "required_channels": ["DUT_MEASUREMENT", "CHAMBER_TEMP", "INTEGRATION_TRIGGER"],
+      "observable_signature": {
+        "units": ["nA/cm2", "DN", "count", "mA"],
+        "keywords": ["dark", "pixel", "DSNU", "hot_pixel", "dark_current"]
+      },
+      "applicable_device_families": ["IMAGE_SENSOR"]
+    },
+
+    "INITIAL_ELECTRICAL_SCREENING": {
+      "test_type": "INITIAL_ELECTRICAL_SCREENING",
+      "display_name": "Pre-Stress Baseline Parametric Characterization (t=0h)",
+      "_note": "Single-point baseline measurement taken at ambient before stress. Not a time-series test itself, but provides the t=0h anchor for all subsequent drift calculations.",
+      "standard_reference": "[SP] ESCC 9000 / MIL-STD-883 Method 5004. Required before any burn-in or stress test.",
+      "is_time_series": false,
+      "default_checkpoints_hours": [0.0],
+      "stress_conditions": {
+        "temperature_c": { "value": 25.0, "evidence": "[SP] Ambient (25°C nominal) parametric test" }
+      },
+      "required_channels": ["DUT_MEASUREMENT"],
+      "observable_signature": {
+        "units": ["uA", "mA", "nA", "dps", "nA/cm2"],
+        "keywords": ["baseline", "initial", "0h"]
+      },
+      "applicable_device_families": ["DIGITAL_IC", "MIXED_SIGNAL_IC", "MEMS_GYROSCOPE", "IMAGE_SENSOR"]
+    },
+
+    "THERMO_VACUUM": {
+      "test_type": "THERMO_VACUUM",
+      "display_name": "Thermo-Vacuum Stress Screening (TVAC)",
+      "_note": "Simulates on-orbit thermal vacuum environment. Used for system-level and some component-level space qualification. Not identical to component burn-in [SP].",
+      "standard_reference": "[SP] ISRO/IISU TVAC specification; general aerospace environmental test [SP ECSS-E-ST-10-03].",
+      "is_time_series": true,
+      "default_checkpoints_hours": [0.0, 12.0, 24.0, 48.0, 72.0],
+      "stress_conditions": {
+        "temperature_c": { "value": 85.0, "evidence": "[SP] Hot case orbit simulation; cold case typically -30 to -40°C [UA mission-specific]" },
+        "vacuum_pressure_torr": { "value": 1.0e-5, "evidence": "[SP] Simulates LEO/GEO orbital vacuum" }
+      },
+      "required_channels": ["DUT_MEASUREMENT", "CHAMBER_TEMP", "VACUUM_PRESSURE"],
+      "observable_signature": {
+        "units": ["uA", "mA", "dps", "torr", "C"],
+        "keywords": ["vacuum", "tvac", "thermal_cycle", "orbit"]
+      },
+      "applicable_device_families": ["DIGITAL_IC", "MEMS_GYROSCOPE", "IMAGE_SENSOR"]
+    }
+  }
+}

@@ -1,0 +1,431 @@
+{
+  "dataset_version": "2.4.0",
+  "schema_version": "ASQD_2.4",
+  "generator_class": "LotSimulator",
+  "random_seed": 202624,
+  "device_families": [
+    "DIGITAL_IC",
+    "MIXED_SIGNAL_IC",
+    "MEMS_GYROSCOPE",
+    "IMAGE_SENSOR",
+    "PRECISION_VOLTAGE_REF"
+  ],
+  "evidence_taxonomy": {
+    "ArrheniusIDDQModel": "[PE] Arrhenius CMOS IDDQ aging Ea=0.68 eV",
+    "ViscoelasticMEMSModel": "[PE] Viscoelastic stress relaxation & creep ZRO drift",
+    "SRHDarkCurrentModel": "[PE] Shockley-Read-Hall thermal generation dark current",
+    "SecondaryParams": "[SA] Synthetic distributions with component & lot process variation"
+  },
+  "lots": [
+    {
+      "file": "digital_ic_lot_00.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_00",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 59,
+      "defect_rate": 0.0295,
+      "sha256": "16ff758fe5618293"
+    },
+    {
+      "file": "digital_ic_lot_01.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_01",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 71,
+      "defect_rate": 0.0355,
+      "sha256": "b5dce27d71db2b8d"
+    },
+    {
+      "file": "digital_ic_lot_02.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_02",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 67,
+      "defect_rate": 0.0335,
+      "sha256": "7b24db8da6b16c15"
+    },
+    {
+      "file": "digital_ic_lot_03.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_03",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 67,
+      "defect_rate": 0.0335,
+      "sha256": "0c4c2a6eb61ae649"
+    },
+    {
+      "file": "digital_ic_lot_04.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_04",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 61,
+      "defect_rate": 0.0305,
+      "sha256": "0c4f66e14e8416fc"
+    },
+    {
+      "file": "digital_ic_lot_05.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_05",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 60,
+      "defect_rate": 0.03,
+      "sha256": "7bc6fb007312c30c"
+    },
+    {
+      "file": "digital_ic_lot_06.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_06",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 52,
+      "defect_rate": 0.026,
+      "sha256": "72b1ec18e689946f"
+    },
+    {
+      "file": "digital_ic_lot_07.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_07",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 86,
+      "defect_rate": 0.043,
+      "sha256": "0b8d674d8282aee3"
+    },
+    {
+      "file": "digital_ic_lot_08.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_08",
+      "split": "VALIDATION",
+      "num_components": 2000,
+      "num_defective": 75,
+      "defect_rate": 0.0375,
+      "sha256": "e879d05339d05fc5"
+    },
+    {
+      "file": "digital_ic_lot_09.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_09",
+      "split": "VALIDATION",
+      "num_components": 2000,
+      "num_defective": 59,
+      "defect_rate": 0.0295,
+      "sha256": "87a71ecc22d82de0"
+    },
+    {
+      "file": "digital_ic_lot_10.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_10",
+      "split": "BLIND_TEST",
+      "num_components": 2000,
+      "num_defective": 61,
+      "defect_rate": 0.0305,
+      "sha256": "24bb1b2f6f1066b6"
+    },
+    {
+      "file": "digital_ic_lot_11.csv",
+      "device_family": "DIGITAL_IC",
+      "lot_id": "LOT_11",
+      "split": "BLIND_TEST",
+      "num_components": 2000,
+      "num_defective": 60,
+      "defect_rate": 0.03,
+      "sha256": "d1ba824dff1292ae"
+    },
+    {
+      "file": "mixed_signal_ic_lot_00.csv",
+      "device_family": "MIXED_SIGNAL_IC",
+      "lot_id": "LOT_00",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 67,
+      "defect_rate": 0.0335,
+      "sha256": "fe0300172607289e"
+    },
+    {
+      "file": "mixed_signal_ic_lot_01.csv",
+      "device_family": "MIXED_SIGNAL_IC",
+      "lot_id": "LOT_01",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 61,
+      "defect_rate": 0.0305,
+      "sha256": "66ede12f929d734d"
+    },
+    {
+      "file": "mixed_signal_ic_lot_02.csv",
+      "device_family": "MIXED_SIGNAL_IC",
+      "lot_id": "LOT_02",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 65,
+      "defect_rate": 0.0325,
+      "sha256": "82ef824269a8d5d2"
+    },
+    {
+      "file": "mixed_signal_ic_lot_03.csv",
+      "device_family": "MIXED_SIGNAL_IC",
+      "lot_id": "LOT_03",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 69,
+      "defect_rate": 0.0345,
+      "sha256": "d3078fde56a74df6"
+    },
+    {
+      "file": "mixed_signal_ic_lot_04.csv",
+      "device_family": "MIXED_SIGNAL_IC",
+      "lot_id": "LOT_04",
+      "split": "VALIDATION",
+      "num_components": 2000,
+      "num_defective": 81,
+      "defect_rate": 0.0405,
+      "sha256": "7826870783d20e7f"
+    },
+    {
+      "file": "mixed_signal_ic_lot_05.csv",
+      "device_family": "MIXED_SIGNAL_IC",
+      "lot_id": "LOT_05",
+      "split": "BLIND_TEST",
+      "num_components": 2000,
+      "num_defective": 87,
+      "defect_rate": 0.0435,
+      "sha256": "3303e651d5c15349"
+    },
+    {
+      "file": "mems_gyroscope_lot_00.csv",
+      "device_family": "MEMS_GYROSCOPE",
+      "lot_id": "LOT_00",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 105,
+      "defect_rate": 0.0525,
+      "sha256": "6800d6efbe0bd417"
+    },
+    {
+      "file": "mems_gyroscope_lot_01.csv",
+      "device_family": "MEMS_GYROSCOPE",
+      "lot_id": "LOT_01",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 104,
+      "defect_rate": 0.052,
+      "sha256": "ab065b78eac23af8"
+    },
+    {
+      "file": "mems_gyroscope_lot_02.csv",
+      "device_family": "MEMS_GYROSCOPE",
+      "lot_id": "LOT_02",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 99,
+      "defect_rate": 0.0495,
+      "sha256": "1d9ea529c03c6495"
+    },
+    {
+      "file": "mems_gyroscope_lot_03.csv",
+      "device_family": "MEMS_GYROSCOPE",
+      "lot_id": "LOT_03",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 92,
+      "defect_rate": 0.046,
+      "sha256": "25cf96bd3481add0"
+    },
+    {
+      "file": "mems_gyroscope_lot_04.csv",
+      "device_family": "MEMS_GYROSCOPE",
+      "lot_id": "LOT_04",
+      "split": "VALIDATION",
+      "num_components": 2000,
+      "num_defective": 97,
+      "defect_rate": 0.0485,
+      "sha256": "e7ffc1af629c7c7f"
+    },
+    {
+      "file": "mems_gyroscope_lot_05.csv",
+      "device_family": "MEMS_GYROSCOPE",
+      "lot_id": "LOT_05",
+      "split": "BLIND_TEST",
+      "num_components": 2000,
+      "num_defective": 98,
+      "defect_rate": 0.049,
+      "sha256": "e163caa72ddead46"
+    },
+    {
+      "file": "image_sensor_lot_00.csv",
+      "device_family": "IMAGE_SENSOR",
+      "lot_id": "LOT_00",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 80,
+      "defect_rate": 0.04,
+      "sha256": "04f92a537a7fc43f"
+    },
+    {
+      "file": "image_sensor_lot_01.csv",
+      "device_family": "IMAGE_SENSOR",
+      "lot_id": "LOT_01",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 105,
+      "defect_rate": 0.0525,
+      "sha256": "449691b5d6a332ea"
+    },
+    {
+      "file": "image_sensor_lot_02.csv",
+      "device_family": "IMAGE_SENSOR",
+      "lot_id": "LOT_02",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 70,
+      "defect_rate": 0.035,
+      "sha256": "50e8c07f0f0e6ab2"
+    },
+    {
+      "file": "image_sensor_lot_03.csv",
+      "device_family": "IMAGE_SENSOR",
+      "lot_id": "LOT_03",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 81,
+      "defect_rate": 0.0405,
+      "sha256": "108d0ba8d72e05b0"
+    },
+    {
+      "file": "image_sensor_lot_04.csv",
+      "device_family": "IMAGE_SENSOR",
+      "lot_id": "LOT_04",
+      "split": "VALIDATION",
+      "num_components": 2000,
+      "num_defective": 83,
+      "defect_rate": 0.0415,
+      "sha256": "5c68d9dbd6ef4ff3"
+    },
+    {
+      "file": "image_sensor_lot_05.csv",
+      "device_family": "IMAGE_SENSOR",
+      "lot_id": "LOT_05",
+      "split": "BLIND_TEST",
+      "num_components": 2000,
+      "num_defective": 86,
+      "defect_rate": 0.043,
+      "sha256": "4cac7b5572f1ee28"
+    },
+    {
+      "file": "precision_voltage_ref_lot_00.csv",
+      "device_family": "PRECISION_VOLTAGE_REF",
+      "lot_id": "LOT_00",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 92,
+      "defect_rate": 0.046,
+      "sha256": "b3af755e9c279577"
+    },
+    {
+      "file": "precision_voltage_ref_lot_01.csv",
+      "device_family": "PRECISION_VOLTAGE_REF",
+      "lot_id": "LOT_01",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 81,
+      "defect_rate": 0.0405,
+      "sha256": "46f94f685cdb7092"
+    },
+    {
+      "file": "precision_voltage_ref_lot_02.csv",
+      "device_family": "PRECISION_VOLTAGE_REF",
+      "lot_id": "LOT_02",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 60,
+      "defect_rate": 0.03,
+      "sha256": "77ca31b2ef810435"
+    },
+    {
+      "file": "precision_voltage_ref_lot_03.csv",
+      "device_family": "PRECISION_VOLTAGE_REF",
+      "lot_id": "LOT_03",
+      "split": "TRAIN",
+      "num_components": 2000,
+      "num_defective": 81,
+      "defect_rate": 0.0405,
+      "sha256": "2c77b4be18abf20b"
+    },
+    {
+      "file": "precision_voltage_ref_lot_04.csv",
+      "device_family": "PRECISION_VOLTAGE_REF",
+      "lot_id": "LOT_04",
+      "split": "VALIDATION",
+      "num_components": 2000,
+      "num_defective": 79,
+      "defect_rate": 0.0395,
+      "sha256": "ba57c3597dec2e47"
+    },
+    {
+      "file": "precision_voltage_ref_lot_05.csv",
+      "device_family": "PRECISION_VOLTAGE_REF",
+      "lot_id": "LOT_05",
+      "split": "BLIND_TEST",
+      "num_components": 2000,
+      "num_defective": 71,
+      "defect_rate": 0.0355,
+      "sha256": "2a036be908ec436c"
+    }
+  ],
+  "splits": {
+    "TRAIN": [
+      "digital_ic_lot_00.csv",
+      "digital_ic_lot_01.csv",
+      "digital_ic_lot_02.csv",
+      "digital_ic_lot_03.csv",
+      "digital_ic_lot_04.csv",
+      "digital_ic_lot_05.csv",
+      "digital_ic_lot_06.csv",
+      "digital_ic_lot_07.csv",
+      "mixed_signal_ic_lot_00.csv",
+      "mixed_signal_ic_lot_01.csv",
+      "mixed_signal_ic_lot_02.csv",
+      "mixed_signal_ic_lot_03.csv",
+      "mems_gyroscope_lot_00.csv",
+      "mems_gyroscope_lot_01.csv",
+      "mems_gyroscope_lot_02.csv",
+      "mems_gyroscope_lot_03.csv",
+      "image_sensor_lot_00.csv",
+      "image_sensor_lot_01.csv",
+      "image_sensor_lot_02.csv",
+      "image_sensor_lot_03.csv",
+      "precision_voltage_ref_lot_00.csv",
+      "precision_voltage_ref_lot_01.csv",
+      "precision_voltage_ref_lot_02.csv",
+      "precision_voltage_ref_lot_03.csv"
+    ],
+    "VALIDATION": [
+      "digital_ic_lot_08.csv",
+      "digital_ic_lot_09.csv",
+      "mixed_signal_ic_lot_04.csv",
+      "mems_gyroscope_lot_04.csv",
+      "image_sensor_lot_04.csv",
+      "precision_voltage_ref_lot_04.csv"
+    ],
+    "BLIND_TEST": [
+      "digital_ic_lot_10.csv",
+      "digital_ic_lot_11.csv",
+      "mixed_signal_ic_lot_05.csv",
+      "mems_gyroscope_lot_05.csv",
+      "image_sensor_lot_05.csv",
+      "precision_voltage_ref_lot_05.csv"
+    ]
+  },
+  "summary": {
+    "total_components": 72000,
+    "total_defective": 2772,
+    "overall_defect_rate": 0.0385,
+    "total_lots": 36
+  }
+}

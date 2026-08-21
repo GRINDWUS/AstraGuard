@@ -1,0 +1,462 @@
+[
+  {
+    "component_id": "LOT_10_COMP_0000",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.23,
+      "v_offset_0h": 4.87,
+      "snr_0h": 45.35
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.904,
+      "iddq_drift_vel_uah": 0.121,
+      "voffset_24h_delta": 0.18,
+      "snr_24h_delta": -1.95
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0001",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.181,
+      "v_offset_0h": 5.11,
+      "snr_0h": 44.82
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.725,
+      "iddq_drift_vel_uah": 0.11354,
+      "voffset_24h_delta": 0.24,
+      "snr_24h_delta": -1.94
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0002",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.245,
+      "v_offset_0h": 5.06,
+      "snr_0h": 44.88
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.935,
+      "iddq_drift_vel_uah": 0.12229,
+      "voffset_24h_delta": 0.34,
+      "snr_24h_delta": -1.61
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0003",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.136,
+      "v_offset_0h": 4.91,
+      "snr_0h": 44.64
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.503,
+      "iddq_drift_vel_uah": 0.10429,
+      "voffset_24h_delta": 0.29,
+      "snr_24h_delta": -1.98
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0004",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.356,
+      "v_offset_0h": 4.81,
+      "snr_0h": 45.39
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 3.113,
+      "iddq_drift_vel_uah": 0.12971,
+      "voffset_24h_delta": 0.16,
+      "snr_24h_delta": -1.93
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "YELLOW_REVIEW",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0005",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.174,
+      "v_offset_0h": 5.02,
+      "snr_0h": 45.63
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.747,
+      "iddq_drift_vel_uah": 0.11446,
+      "voffset_24h_delta": 0.4,
+      "snr_24h_delta": -2.03
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "RED_HIGH_RISK",
+      "reason_codes": "FORECAST_NEAR_SPEC_LIMIT",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0006",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.243,
+      "v_offset_0h": 5.0,
+      "snr_0h": 44.74
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.898,
+      "iddq_drift_vel_uah": 0.12075,
+      "voffset_24h_delta": 0.22,
+      "snr_24h_delta": -2.01
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0007",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.318,
+      "v_offset_0h": 4.85,
+      "snr_0h": 44.45
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.889,
+      "iddq_drift_vel_uah": 0.12037,
+      "voffset_24h_delta": 0.05,
+      "snr_24h_delta": -0.06
+    },
+    "screening_evidence": {
+      "defect_probability": 0.9997000098228455,
+      "recommendation": "RED_HIGH_RISK",
+      "reason_codes": "FORECAST_NEAR_SPEC_LIMIT | HIGH_DEFECT_PROBABILITY | IFOREST_OOD_ANOMALY | LSTM_TEMPORAL_ANOMALY",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "MEMS_MICROCRACK"
+  },
+  {
+    "component_id": "LOT_10_COMP_0008",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.205,
+      "v_offset_0h": 5.18,
+      "snr_0h": 44.09
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.893,
+      "iddq_drift_vel_uah": 0.12054,
+      "voffset_24h_delta": 0.05,
+      "snr_24h_delta": -1.75
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0009",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.191,
+      "v_offset_0h": 4.83,
+      "snr_0h": 44.77
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.873,
+      "iddq_drift_vel_uah": 0.11971,
+      "voffset_24h_delta": 0.52,
+      "snr_24h_delta": -0.21
+    },
+    "screening_evidence": {
+      "defect_probability": 0.9997000098228455,
+      "recommendation": "RED_HIGH_RISK",
+      "reason_codes": "FORECAST_NEAR_SPEC_LIMIT | HIGH_DEFECT_PROBABILITY",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "THERMAL_RUNAWAY"
+  },
+  {
+    "component_id": "LOT_10_COMP_0010",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.104,
+      "v_offset_0h": 4.91,
+      "snr_0h": 45.71
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.58,
+      "iddq_drift_vel_uah": 0.1075,
+      "voffset_24h_delta": 0.08,
+      "snr_24h_delta": -2.14
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0011",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.185,
+      "v_offset_0h": 4.94,
+      "snr_0h": 44.65
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.828,
+      "iddq_drift_vel_uah": 0.11783,
+      "voffset_24h_delta": 0.24,
+      "snr_24h_delta": -1.99
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "UNKNOWN_PATTERN_REVIEW",
+      "reason_codes": "LSTM_TEMPORAL_ANOMALY | UNKNOWN_DEGRADATION_PATTERN",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0012",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.205,
+      "v_offset_0h": 4.76,
+      "snr_0h": 45.39
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.655,
+      "iddq_drift_vel_uah": 0.11062,
+      "voffset_24h_delta": 0.29,
+      "snr_24h_delta": -2.38
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0013",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.186,
+      "v_offset_0h": 5.19,
+      "snr_0h": 44.94
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.875,
+      "iddq_drift_vel_uah": 0.11979,
+      "voffset_24h_delta": 0.24,
+      "snr_24h_delta": -2.11
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "UNKNOWN_PATTERN_REVIEW",
+      "reason_codes": "LSTM_TEMPORAL_ANOMALY | UNKNOWN_DEGRADATION_PATTERN",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0014",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.011,
+      "v_offset_0h": 4.9,
+      "snr_0h": 44.57
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.285,
+      "iddq_drift_vel_uah": 0.09521,
+      "voffset_24h_delta": 0.34,
+      "snr_24h_delta": -2.02
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "UNKNOWN_PATTERN_REVIEW",
+      "reason_codes": "ACCELERATING_KINETICS | IFOREST_OOD_ANOMALY | UNKNOWN_DEGRADATION_PATTERN",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0015",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.07,
+      "v_offset_0h": 5.09,
+      "snr_0h": 45.33
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.536,
+      "iddq_drift_vel_uah": 0.10567,
+      "voffset_24h_delta": 0.04,
+      "snr_24h_delta": 0.27
+    },
+    "screening_evidence": {
+      "defect_probability": 0.9997000098228455,
+      "recommendation": "INSTRUMENT_REVIEW",
+      "reason_codes": "INSTRUMENT_CHANNEL_FROZEN",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "SENSOR_FAULT"
+  },
+  {
+    "component_id": "LOT_10_COMP_0016",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.173,
+      "v_offset_0h": 5.0,
+      "snr_0h": 45.13
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.75,
+      "iddq_drift_vel_uah": 0.11458,
+      "voffset_24h_delta": 0.26,
+      "snr_24h_delta": -1.89
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0017",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.226,
+      "v_offset_0h": 5.13,
+      "snr_0h": 44.66
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.847,
+      "iddq_drift_vel_uah": 0.11862,
+      "voffset_24h_delta": 0.6,
+      "snr_24h_delta": 0.33
+    },
+    "screening_evidence": {
+      "defect_probability": 0.9997000098228455,
+      "recommendation": "RED_HIGH_RISK",
+      "reason_codes": "FORECAST_NEAR_SPEC_LIMIT | HIGH_DEFECT_PROBABILITY",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "THERMAL_RUNAWAY"
+  },
+  {
+    "component_id": "LOT_10_COMP_0018",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.202,
+      "v_offset_0h": 5.23,
+      "snr_0h": 44.94
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.768,
+      "iddq_drift_vel_uah": 0.11533,
+      "voffset_24h_delta": 0.05,
+      "snr_24h_delta": -2.07
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "GREEN_NORMAL_CANDIDATE",
+      "reason_codes": "LOW_RISK",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  },
+  {
+    "component_id": "LOT_10_COMP_0019",
+    "lot_id": "LOT_10",
+    "device_family": "SPACE_MEMS_SENSOR",
+    "baseline": {
+      "iddq_0h": 1.077,
+      "v_offset_0h": 5.01,
+      "snr_0h": 44.42
+    },
+    "degradation_signature": {
+      "iddq_24h_delta": 2.658,
+      "iddq_drift_vel_uah": 0.11075,
+      "voffset_24h_delta": 0.46,
+      "snr_24h_delta": -2.12
+    },
+    "screening_evidence": {
+      "defect_probability": 0.0003000000142492354,
+      "recommendation": "RED_HIGH_RISK",
+      "reason_codes": "FORECAST_NEAR_SPEC_LIMIT | LSTM_TEMPORAL_ANOMALY | UNKNOWN_DEGRADATION_PATTERN",
+      "policy_version": "policy-3.0"
+    },
+    "ground_truth": "NOMINAL"
+  }
+]

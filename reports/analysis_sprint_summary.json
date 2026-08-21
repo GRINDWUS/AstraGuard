@@ -1,0 +1,19 @@
+{
+  "sprint_title": "AstraGuard 2.4 — Week 1 Analysis Sprint Master Summary",
+  "audit_timestamp": "2026-09-02T15:45:00+05:30",
+  "dataset": "ASQD_2.4/asqd_24_blind_test.csv (12,000 components)",
+  "executive_verdict": "PATH A: Analysis is Good, Frozen v2 Models are Validated & Defensible.",
+  "key_takeaways": [
+    "Overall 168h Forecast R² = 0.9913 across 12,000 blind test components.",
+    "96h Telemetry horizon yields 29.39% overall error reduction over 24h prediction.",
+    "Observable physical failure modes (Thermal Runaway, Electromigration, Dark Current Spikes, Spatial Outliers) achieve 95%–100% defect recall.",
+    "Physically unobservable failure modes (e.g. MEMS Stiction Onset) are isolated and routed to YELLOW (Extend Burn-in to 168h) rather than forcing an unsafe prediction.",
+    "Data leakage is strictly zero: value_168h_actual and ground-truth labels are excluded prior to feature matrix build."
+  ],
+  "script_outputs": {
+    "model_analysis": "reports/model_analysis_report.json",
+    "telemetry_horizon": "reports/telemetry_horizon_analysis.json",
+    "shap_attribution": "reports/shap_analysis_report.json",
+    "failure_mode_audit": "reports/failure_mode_audit.json"
+  }
+}

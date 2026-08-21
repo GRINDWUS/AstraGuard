@@ -1,0 +1,32 @@
+{
+  "session_id": "AG-SDK-57F1F221",
+  "audit_id": "AUDIT-34F70F04C5D9",
+  "timestamp": "2026-08-31T13:41:30.406932",
+  "operator_id": "QA_OPERATOR_CLI",
+  "read_only_guarantee": true,
+  "context": {
+    "status": "PARTIAL_CONTEXT",
+    "resolved_device": "DIGITAL_IC",
+    "resolved_test": "THERMAL_BURN_IN",
+    "resolved_param": "IDDQ",
+    "confidence": 0.594
+  },
+  "data_quality_score": 1.0,
+  "instrument_health": "INSTRUMENT_HEALTHY",
+  "recommendation": "RED_HIGH_RISK",
+  "evidence_trail": [
+    "[CONTEXT] Resolved Device: DIGITAL_IC via ResolutionStatus.PARTIAL_CONTEXT (Conf: 0.59)",
+    "[ROUTER] Active Anomaly Model: RobustZScorePopulationDetector",
+    "[ROUTER] Active Forecaster: PhysicsArrheniusTemporalForecaster",
+    "[METRICS] Evaluated 2000 components | Green: 1940, Yellow: 30, Red: 30",
+    "[BENCHMARK] Chamber Hours Saved: 83.14%"
+  ],
+  "reasons": [
+    "30 components exhibited severe population drift or predicted 168h specification breach."
+  ],
+  "components_summary": {
+    "GREEN": 1940,
+    "YELLOW": 30,
+    "RED": 30
+  }
+}

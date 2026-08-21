@@ -1,0 +1,72 @@
+{
+  "pipeline_type": "LeakageSafePreprocessor",
+  "device_family": "PRECISION_VOLTAGE_REF",
+  "use_log1p": true,
+  "is_fitted": true,
+  "fit_metadata": {
+    "device_family": "PRECISION_VOLTAGE_REF",
+    "use_log1p": true,
+    "n_training_samples": 8000,
+    "n_features": 9,
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_rate_per_hour",
+      "ppm_drift_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "v_offset_24h",
+      "snr_24h"
+    ]
+  },
+  "transformer": {
+    "transformer_type": "Log1pTransformer",
+    "log_features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_rate_per_hour",
+      "ppm_drift_24h"
+    ],
+    "is_fitted": true
+  },
+  "scaler": {
+    "scaler_type": "RobustMADScaler",
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_rate_per_hour",
+      "ppm_drift_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "v_offset_24h",
+      "snr_24h"
+    ],
+    "medians": {
+      "value_0h": 2.77261997173198,
+      "value_24h": 8.769221694648953,
+      "delta_value_0_24h": 8.766886907014387,
+      "drift_rate_per_hour": 5.592410251968174,
+      "ppm_drift_24h": 7.853164102370977,
+      "robust_z_score_0h": 0.0,
+      "robust_z_score_24h": 0.0,
+      "v_offset_24h": -0.0005,
+      "snr_24h": 34.98
+    },
+    "mads": {
+      "value_0h": 0.1442269696934677,
+      "value_24h": 0.1539912333941985,
+      "delta_value_0_24h": 0.15399187633379294,
+      "drift_rate_per_hour": 0.15344103464596473,
+      "ppm_drift_24h": 0.15395527210419954,
+      "robust_z_score_0h": 1.0,
+      "robust_z_score_24h": 1.0,
+      "v_offset_24h": 0.055894019999999996,
+      "snr_24h": 1.3046879999999932
+    },
+    "is_fitted": true
+  },
+  "artifact_sha256": "e6ad34e423e1eed31d5e5ccd0d93985125bd698e4eb785f9722c8d4af887b43b"
+}

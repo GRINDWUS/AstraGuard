@@ -1,0 +1,110 @@
+{
+  "DIGITAL_IC": {
+    "features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "degradation_ratio_24h_0h",
+      "temp_normalized_0h",
+      "temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "ICC_active_mA",
+      "input_leakage_nA",
+      "propagation_delay_ns",
+      "v_offset_24h",
+      "snr_24h"
+    ],
+    "n_features": 14,
+    "target": "value_168h_actual",
+    "train_rows": 16000,
+    "val_rows": 4000,
+    "test_rows": 4000,
+    "preprocessor_sha256": "9e5f4ad5f572a0411724540f3a9b09ab849cf445bb7e7199fe460d3c72d1cb95"
+  },
+  "MIXED_SIGNAL_IC": {
+    "features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "degradation_ratio_24h_0h",
+      "temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "analog_digital_interaction_ratio",
+      "v_offset_24h",
+      "snr_24h"
+    ],
+    "n_features": 11,
+    "target": "value_168h_actual",
+    "train_rows": 8000,
+    "val_rows": 2000,
+    "test_rows": 2000,
+    "preprocessor_sha256": "61ded99b40e22324fadbfdd6b775610c35a4493efdafba7672635bc74a6a2304"
+  },
+  "MEMS_GYROSCOPE": {
+    "features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_velocity_per_hour",
+      "logarithmic_creep_rate",
+      "viscoelastic_relaxation_index",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "scale_factor_error_ppm",
+      "noise_density_dps_rtHz",
+      "supply_current_mA",
+      "temperature_sensitivity_dps_C"
+    ],
+    "n_features": 12,
+    "target": "value_168h_actual",
+    "train_rows": 8000,
+    "val_rows": 2000,
+    "test_rows": 2000,
+    "preprocessor_sha256": "34b231127f8dc3f539a83f8a6ead0120a7fe71324dcc1f60d6370369dd53c8ea"
+  },
+  "IMAGE_SENSOR": {
+    "features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "trap_generation_rate",
+      "srh_temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "DSNU_DN",
+      "hot_pixel_count",
+      "supply_current_mA",
+      "dark_signal_mean_DN"
+    ],
+    "n_features": 12,
+    "target": "value_168h_actual",
+    "train_rows": 8000,
+    "val_rows": 2000,
+    "test_rows": 2000,
+    "preprocessor_sha256": "00ea1d74b9ae1bda6d839ab6062ae3e19c0e92e0d7cca720050a9126ed5da03e"
+  },
+  "PRECISION_VOLTAGE_REF": {
+    "features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "drift_rate_per_hour",
+      "ppm_drift_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "v_offset_24h",
+      "snr_24h"
+    ],
+    "n_features": 9,
+    "target": "value_168h_actual",
+    "train_rows": 8000,
+    "val_rows": 2000,
+    "test_rows": 2000,
+    "preprocessor_sha256": "e6ad34e423e1eed31d5e5ccd0d93985125bd698e4eb785f9722c8d4af887b43b"
+  }
+}

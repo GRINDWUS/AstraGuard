@@ -1,0 +1,47 @@
+{
+  "dataset_name": "AstraGuard Synthetic Qualification Dataset (ASQD)",
+  "dataset_id": "ASQD_v2.1.0_LOT_07",
+  "generator_version": "2.1.0",
+  "random_seed": 47,
+  "lot_id": "LOT_07",
+  "split": "TRAIN",
+  "num_components": 500,
+  "observation_horizon_hours": 168,
+  "observation_note": "168h is the AstraGuard prototype observation horizon. Not a claimed universal qualification duration. MIL-STD-883 Method 1015 conditions are method-dependent.",
+  "sampling_interval_hours": 1,
+  "failure_distribution": {
+    "NOMINAL": 92.0,
+    "THERMAL_RUNAWAY": 3.0,
+    "MEMS_MICROCRACK": 2.0,
+    "FREAK_OUTLIER": 1.0,
+    "INTERMITTENT_FAULT": 1.0,
+    "SENSOR_FAULT": 1.0
+  },
+  "class_counts": {
+    "NOMINAL": 459,
+    "THERMAL_RUNAWAY": 18,
+    "MEMS_MICROCRACK": 11,
+    "FREAK_OUTLIER": 5,
+    "INTERMITTENT_FAULT": 4,
+    "SENSOR_FAULT": 3
+  },
+  "defect_rate_pct": 8.2,
+  "temperature_profile": {
+    "t_start_c": 25.0,
+    "t_peak_c": 125.0,
+    "ramp_tau_h": 0.8,
+    "profile_type": "ramp_hold",
+    "profile_source": "prototype_policy",
+    "qualification_standard": "configured_by_user"
+  },
+  "measurement_model": {
+    "iddq_noise_sigma_ua": 0.02,
+    "iddq_quantization_lsb_ua": 0.001,
+    "voffset_noise_sigma_mv": 0.05,
+    "snr_noise_sigma_db": 0.1
+  },
+  "synthetic": true,
+  "synthetic_note": "Synthetic data generated using physically motivated degradation models and configurable test conditions. NOT ISRO proprietary data. Does not reproduce any specific ISRO test facility.",
+  "created_at": "2026-08-26T14:38:00.054506Z",
+  "config_hash": "7a792ec2a783"
+}

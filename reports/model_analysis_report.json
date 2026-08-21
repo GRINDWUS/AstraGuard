@@ -1,0 +1,243 @@
+{
+  "DIGITAL_IC": {
+    "sample_count": 4000,
+    "mae": 29.186482628970268,
+    "rmse": 33.23479541803133,
+    "r2": 0.9797217310326796,
+    "recall": 1.0,
+    "precision": 0.8447837150127226,
+    "f1": 0.9158620689655173,
+    "usl_limit": 1150.0,
+    "per_failure_mode": {
+      "DIELECTRIC_OSCILLATION": {
+        "sample_count": 35,
+        "mae": 28.426321909965868,
+        "rmse": 30.01859057394587,
+        "recall": 1.0,
+        "defective_count": 3
+      },
+      "ELECTROMIGRATION": {
+        "sample_count": 38,
+        "mae": 46.85565289784544,
+        "rmse": 47.750101640762374,
+        "recall": 1.0,
+        "defective_count": 6
+      },
+      "NOMINAL": {
+        "sample_count": 3879,
+        "mae": 28.398454614043697,
+        "rmse": 30.486696064679723,
+        "recall": 1.0,
+        "defective_count": 296
+      },
+      "SPATIAL_OUTLIER": {
+        "sample_count": 14,
+        "mae": 212.46574103032523,
+        "rmse": 218.39538626382182,
+        "recall": 1.0,
+        "defective_count": 14
+      },
+      "THERMAL_RUNAWAY": {
+        "sample_count": 34,
+        "mae": 24.65790048864972,
+        "rmse": 28.169972899734642,
+        "recall": 1.0,
+        "defective_count": 13
+      }
+    }
+  },
+  "MIXED_SIGNAL_IC": {
+    "sample_count": 2000,
+    "mae": 37.86495449000718,
+    "rmse": 87.28140482665958,
+    "r2": 0.9586896332337834,
+    "recall": 0.9832826747720365,
+    "precision": 1.0,
+    "f1": 0.9915708812260536,
+    "usl_limit": 1150.0,
+    "per_failure_mode": {
+      "DIELECTRIC_OSCILLATION": {
+        "sample_count": 31,
+        "mae": 25.555201911614798,
+        "rmse": 32.91712578182165,
+        "recall": 1.0,
+        "defective_count": 31
+      },
+      "ELECTROMIGRATION": {
+        "sample_count": 25,
+        "mae": 47.35338247235339,
+        "rmse": 57.531677112087785,
+        "recall": 0.96,
+        "defective_count": 25
+      },
+      "NOMINAL": {
+        "sample_count": 1913,
+        "mae": 32.13457690327001,
+        "rmse": 40.10633982838404,
+        "recall": 0.9830418653948065,
+        "defective_count": 1887
+      },
+      "SPATIAL_OUTLIER": {
+        "sample_count": 12,
+        "mae": 973.9835730367244,
+        "rmse": 1000.6801362641845,
+        "recall": 1.0,
+        "defective_count": 12
+      },
+      "THERMAL_RUNAWAY": {
+        "sample_count": 19,
+        "mae": 31.190245607854038,
+        "rmse": 37.22305226368026,
+        "recall": 1.0,
+        "defective_count": 19
+      }
+    }
+  },
+  "MEMS_GYROSCOPE": {
+    "sample_count": 2000,
+    "mae": 0.0026226715817591535,
+    "rmse": 0.0032657638380893935,
+    "r2": 0.9948495875273824,
+    "recall": 0.0,
+    "precision": 0.0,
+    "f1": 0.0,
+    "usl_limit": 25.0,
+    "per_failure_mode": {
+      "MEMS_STICTION_ONSET": {
+        "sample_count": 39,
+        "mae": 0.004100333955498757,
+        "rmse": 0.004709600453986006,
+        "recall": 1.0,
+        "defective_count": 0
+      },
+      "NOMINAL": {
+        "sample_count": 1902,
+        "mae": 0.0025554773065895146,
+        "rmse": 0.003091042981777025,
+        "recall": 1.0,
+        "defective_count": 0
+      },
+      "PACKAGING_STRESS_RELAXATION": {
+        "sample_count": 29,
+        "mae": 0.0013759956715550788,
+        "rmse": 0.0018439343162307315,
+        "recall": 1.0,
+        "defective_count": 0
+      },
+      "SPATIAL_OUTLIER": {
+        "sample_count": 11,
+        "mae": 0.01234584242424236,
+        "rmse": 0.01358173625746246,
+        "recall": 1.0,
+        "defective_count": 0
+      },
+      "THERMAL_RUNAWAY": {
+        "sample_count": 19,
+        "mae": 0.002589692683096635,
+        "rmse": 0.0029463987160226134,
+        "recall": 1.0,
+        "defective_count": 0
+      }
+    }
+  },
+  "IMAGE_SENSOR": {
+    "sample_count": 2000,
+    "mae": 1.705127457135161,
+    "rmse": 1.9365120382169416,
+    "r2": 0.9654947163482729,
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0,
+    "usl_limit": 25.0,
+    "per_failure_mode": {
+      "DARK_CURRENT_SPIKE_GROWTH": {
+        "sample_count": 24,
+        "mae": 3.210922596424595,
+        "rmse": 3.9178706683760804,
+        "recall": 1.0,
+        "defective_count": 24
+      },
+      "DIELECTRIC_OSCILLATION": {
+        "sample_count": 18,
+        "mae": 1.5624316707891497,
+        "rmse": 1.6072935975179554,
+        "recall": 1.0,
+        "defective_count": 0
+      },
+      "NOMINAL": {
+        "sample_count": 1914,
+        "mae": 1.5798868111564963,
+        "rmse": 1.6040920650464712,
+        "recall": 1.0,
+        "defective_count": 0
+      },
+      "SPATIAL_OUTLIER": {
+        "sample_count": 20,
+        "mae": 3.985113263193847,
+        "rmse": 4.495161762010652,
+        "recall": 1.0,
+        "defective_count": 20
+      },
+      "THERMAL_RUNAWAY": {
+        "sample_count": 24,
+        "mae": 8.394307502688198,
+        "rmse": 8.55423606206223,
+        "recall": 1.0,
+        "defective_count": 24
+      }
+    }
+  },
+  "PRECISION_VOLTAGE_REF": {
+    "sample_count": 2000,
+    "mae": 304.61960552817817,
+    "rmse": 504.78153921334734,
+    "r2": 0.918824119511537,
+    "recall": 1.0,
+    "precision": 0.5226917057902973,
+    "f1": 0.6865364850976362,
+    "usl_limit": 6800.0,
+    "per_failure_mode": {
+      "DIELECTRIC_OSCILLATION": {
+        "sample_count": 20,
+        "mae": 295.58008891034143,
+        "rmse": 319.7655054371104,
+        "recall": 1.0,
+        "defective_count": 1
+      },
+      "ELECTROMIGRATION": {
+        "sample_count": 17,
+        "mae": 386.32461643990797,
+        "rmse": 415.60880743460746,
+        "recall": 1.0,
+        "defective_count": 4
+      },
+      "NOMINAL": {
+        "sample_count": 1929,
+        "mae": 277.46835175914845,
+        "rmse": 319.2095129514099,
+        "recall": 1.0,
+        "defective_count": 316
+      },
+      "SPATIAL_OUTLIER": {
+        "sample_count": 11,
+        "mae": 5211.269441304752,
+        "rmse": 5281.691855298879,
+        "recall": 1.0,
+        "defective_count": 11
+      },
+      "THERMAL_RUNAWAY": {
+        "sample_count": 23,
+        "mae": 182.59462612701807,
+        "rmse": 229.69965618913855,
+        "recall": 1.0,
+        "defective_count": 2
+      }
+    }
+  },
+  "OVERALL": {
+    "sample_count": 12000,
+    "mae": 67.09421256747379,
+    "rmse": 210.0140071922218,
+    "r2": 0.9913172470342485
+  }
+}

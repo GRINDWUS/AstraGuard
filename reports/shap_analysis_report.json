@@ -1,0 +1,140 @@
+{
+  "DIGITAL_IC": {
+    "top_5_features": {
+      "robust_z_score_96h": 40.28740355686665,
+      "trajectory_acceleration": 40.26406100389372,
+      "robust_z_score_24h": 40.24188778784007,
+      "robust_z_score_0h": 7.351119161725796,
+      "temp_normalized_0h": 7.175384119759271
+    },
+    "all_feature_importance": {
+      "robust_z_score_96h": 40.28740355686665,
+      "trajectory_acceleration": 40.26406100389372,
+      "robust_z_score_24h": 40.24188778784007,
+      "robust_z_score_0h": 7.351119161725796,
+      "temp_normalized_0h": 7.175384119759271,
+      "temp_normalized_24h": 5.734134415060403,
+      "value_0h": 5.677320883621284,
+      "velocity_24_96": 1.8552880016269249,
+      "degradation_ratio_24h_0h": 0.42905448152158954,
+      "value_96h": 0.1389429485884025,
+      "growth_ratio_96h": 0.11933056894938952,
+      "value_24h": 0.044051966755656986,
+      "delta_value_0_24h": 0.043728957959510144,
+      "growth_rate_per_hour": 0.03552490999518979,
+      "snr_24h": 0.013891483140305826,
+      "propagation_delay_ns": 0.00447283954792824,
+      "input_leakage_nA": 0.003727173207363323,
+      "v_offset_24h": 0.0034159911118547704,
+      "ICC_active_mA": 8.525392702963375e-05
+    }
+  },
+  "MIXED_SIGNAL_IC": {
+    "top_5_features": {
+      "robust_z_score_96h": 51.89973831480879,
+      "robust_z_score_24h": 51.128624023805976,
+      "trajectory_acceleration": 40.54405948303918,
+      "robust_z_score_0h": 33.349610704093536,
+      "velocity_24_96": 3.157149578825704
+    },
+    "all_feature_importance": {
+      "robust_z_score_96h": 51.89973831480879,
+      "robust_z_score_24h": 51.128624023805976,
+      "trajectory_acceleration": 40.54405948303918,
+      "robust_z_score_0h": 33.349610704093536,
+      "velocity_24_96": 3.157149578825704,
+      "value_0h": 2.7336875187519167,
+      "temp_normalized_24h": 1.5678535916152017,
+      "degradation_ratio_24h_0h": 1.338374952432537,
+      "growth_ratio_96h": 1.0839851734806794,
+      "delta_value_0_24h": 0.2699371925014391,
+      "value_24h": 0.26983260992790403,
+      "growth_rate_per_hour": 0.253518301204923,
+      "value_96h": 0.2522030796328142,
+      "analog_digital_interaction_ratio": 0.07693187208750522,
+      "snr_24h": 0.04804456326666066,
+      "v_offset_24h": 0.017352767022292392
+    }
+  },
+  "MEMS_GYROSCOPE": {
+    "top_5_features": {
+      "robust_z_score_96h": 0.008246946751913294,
+      "value_96h": 0.00688886157443641,
+      "velocity_24_96": 0.0005036471118384508,
+      "trajectory_acceleration": 0.0002936753252269232,
+      "value_24h": 0.000176028948156589
+    },
+    "all_feature_importance": {
+      "robust_z_score_96h": 0.008246946751913294,
+      "value_96h": 0.00688886157443641,
+      "velocity_24_96": 0.0005036471118384508,
+      "trajectory_acceleration": 0.0002936753252269232,
+      "value_24h": 0.000176028948156589,
+      "robust_z_score_24h": 0.00016970021132184764,
+      "growth_ratio_96h": 0.0001499391368192515,
+      "robust_z_score_0h": 0.00014812507485773962,
+      "value_0h": 0.00011989019437663495,
+      "delta_value_0_24h": 5.613306534188351e-05,
+      "logarithmic_creep_rate": 5.535254798376154e-05,
+      "viscoelastic_relaxation_index": 4.99786107200187e-05,
+      "drift_velocity_per_hour": 4.891126458177812e-05,
+      "scale_factor_error_ppm": 3.4789564363379084e-05,
+      "temperature_sensitivity_dps_C": 2.5269942996815516e-05,
+      "noise_density_dps_rtHz": 2.4665054600511495e-05,
+      "supply_current_mA": 2.1018224099372862e-05
+    }
+  },
+  "IMAGE_SENSOR": {
+    "top_5_features": {
+      "velocity_24_96": 2.6204314153594557,
+      "value_96h": 1.7716430193909256,
+      "robust_z_score_96h": 1.3144586249879568,
+      "trajectory_acceleration": 0.5142841951236621,
+      "value_0h": 0.017035763742269082
+    },
+    "all_feature_importance": {
+      "velocity_24_96": 2.6204314153594557,
+      "value_96h": 1.7716430193909256,
+      "robust_z_score_96h": 1.3144586249879568,
+      "trajectory_acceleration": 0.5142841951236621,
+      "value_0h": 0.017035763742269082,
+      "srh_temp_normalized_24h": 0.013565500812790432,
+      "robust_z_score_0h": 0.012372230976598059,
+      "value_24h": 0.011939903431101967,
+      "robust_z_score_24h": 0.0107833005975604,
+      "growth_rate_per_hour": 0.010304172615626923,
+      "growth_ratio_96h": 0.009641152865162579,
+      "delta_value_0_24h": 0.007957500144954855,
+      "trap_generation_rate": 0.0064944869944109996,
+      "DSNU_DN": 0.0022093329643743816,
+      "supply_current_mA": 0.0010311870048767286,
+      "dark_signal_mean_DN": 0.0008959254725517702,
+      "hot_pixel_count": 0.0003216962559505177
+    }
+  },
+  "PRECISION_VOLTAGE_REF": {
+    "top_5_features": {
+      "robust_z_score_24h": 262.92999062688665,
+      "robust_z_score_96h": 258.9254371496091,
+      "trajectory_acceleration": 233.74469127027933,
+      "robust_z_score_0h": 207.59377444938707,
+      "value_0h": 31.458970260112466
+    },
+    "all_feature_importance": {
+      "robust_z_score_24h": 262.92999062688665,
+      "robust_z_score_96h": 258.9254371496091,
+      "trajectory_acceleration": 233.74469127027933,
+      "robust_z_score_0h": 207.59377444938707,
+      "value_0h": 31.458970260112466,
+      "drift_rate_per_hour": 6.319227109488562,
+      "delta_value_0_24h": 5.9592315058355485,
+      "ppm_drift_24h": 5.8800950460125705,
+      "value_96h": 5.875879414231584,
+      "value_24h": 5.8566441322685465,
+      "velocity_24_96": 2.5077836769238098,
+      "growth_ratio_96h": 0.7315626378311353,
+      "snr_24h": 0.19856016825209666,
+      "v_offset_24h": 0.02255223650576259
+    }
+  }
+}

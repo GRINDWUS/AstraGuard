@@ -1,0 +1,97 @@
+{
+  "_schema_version": "2.3",
+  "_audit_note": "Evidence classification tags applied to each field: [PE]=Physically Established, [SP]=Standard/Procedure Dependent, [FA]=Facility/ATE Dependent, [SA]=Synthetic Assumption, [UA]=Unknown/Requires Authoritative Documentation",
+  "device_profiles": {
+    "DIGITAL_IC": {
+      "device_family": "DIGITAL_IC",
+      "display_name": "Digital Microcircuit / FPGA / ASIC",
+      "_note": "Covers CMOS logic ICs, FPGAs, ASICs screened for space qualification.",
+      "expected_parameters": ["IDDQ", "ICC_active", "input_leakage", "propagation_delay"],
+      "primary_parameter": "IDDQ",
+      "parameter_units": {
+        "IDDQ": { "unit": "uA", "evidence": "[PE] Arrhenius thermal leakage I∝exp(-Ea/kT); gate oxide defect current" },
+        "ICC_active": { "unit": "mA", "evidence": "[SP] Active supply current; MIL-STD-883 Method 3001" },
+        "input_leakage": { "unit": "nA", "evidence": "[PE] Junction leakage from ESD input diodes" },
+        "propagation_delay": { "unit": "ns", "evidence": "[SP] MIL-STD-883 Method 3009 timing test" }
+      },
+      "physical_failure_modes": {
+        "GATE_OXIDE_BREAKDOWN": "[PE] Intrinsic dielectric breakdown; Weibull distributed; accelerated by E-field",
+        "ELECTROMIGRATION": "[PE] Black's equation: MTTF∝j^{-n}·exp(Ea_em/kT); Ea_em≈0.7-0.9eV Al, ≈1.1eV Cu",
+        "HOT_CARRIER_INJECTION": "[PE] HCI: electrons/holes injected into gate oxide at high lateral E-field",
+        "NBTI": "[PE] Negative Bias Temperature Instability in PMOS; threshold voltage drift ΔVth∝t^0.25"
+      },
+      "spec_limits": {
+        "IDDQ_max_uA": { "value": 50.0, "evidence": "[SP] Typical COTS space-grade limit; device-specific [UA]" },
+        "propagation_delay_max_ns": { "value": 25.0, "evidence": "[SP] Device-datasheet dependent [UA]" }
+      },
+      "applicable_test_types": ["THERMAL_BURN_IN", "DYNAMIC_BURN_IN", "INITIAL_ELECTRICAL_SCREENING"],
+      "model_routing": {
+        "anomaly_detector": "RobustZScorePopulationDetector",
+        "forecaster": "ArrheniusRelativeTemporalForecaster",
+        "evidence": "[SA] Model assigned based on Arrhenius physical basis; validated on synthetic IDDQ lots"
+      }
+    },
+
+    "MEMS_GYROSCOPE": {
+      "device_family": "MEMS_GYROSCOPE",
+      "display_name": "MEMS Angular Rate Sensor / Inertial Measurement Unit",
+      "_note": "Covers silicon MEMS rate sensors; failure modes differ fundamentally from ICs. ZRO drift is the primary reliability indicator [PE]. Not screened identically to ICs [SP].",
+      "expected_parameters": ["zero_rate_offset", "scale_factor_error", "noise_density", "supply_current", "temperature_sensitivity"],
+      "primary_parameter": "zero_rate_offset",
+      "parameter_units": {
+        "zero_rate_offset": { "unit": "dps", "evidence": "[PE] Zero-rate output (ZRO) drift: packaging stress relaxation + spring constant drift" },
+        "scale_factor_error": { "unit": "ppm", "evidence": "[PE] Sensitivity/scale-factor drift from capacitive comb geometry changes" },
+        "noise_density": { "unit": "dps/rtHz", "evidence": "[PE] Thermomechanical noise floor; kT/C with spring constant" },
+        "supply_current": { "unit": "mA", "evidence": "[SP] Supply current drawn; measured as secondary health indicator" },
+        "temperature_sensitivity": { "unit": "dps/C", "evidence": "[PE] ZRO thermal dependency; CTE mismatch between die and package" }
+      },
+      "physical_failure_modes": {
+        "MEMS_STICTION": "[PE] Comb finger stiction from surface adhesion forces exceeding restoring spring force",
+        "PACKAGING_STRESS_RELAXATION": "[PE] Viscoelastic creep in die attach / resin; shifts ZRO permanently",
+        "CAPACITIVE_COMB_DRIFT": "[PE] Geometry micro-deformation of comb structure under thermal cycling",
+        "HERMETICITY_LOSS": "[SP] Package seal degradation; cavity pressure change alters damping [SP ESCC 10501]"
+      },
+      "spec_limits": {
+        "ZRO_max_dps": { "value": 0.5, "evidence": "[SP] Typical inertial-grade limit; mission-specific [UA]" },
+        "scale_factor_error_max_ppm": { "value": 500.0, "evidence": "[SA] Synthetic baseline; manufacturer-specific [UA]" }
+      },
+      "applicable_test_types": ["THERMAL_BURN_IN", "MEMS_THERMAL_STRESS", "THERMO_VACUUM", "INITIAL_ELECTRICAL_SCREENING"],
+      "model_routing": {
+        "anomaly_detector": "MultiVariateMahalanobisDetector",
+        "forecaster": "ViscoelasticStressDriftForecaster",
+        "evidence": "[SA] Assigned based on viscoelastic creep physical basis; validated on synthetic MEMS ZRO lots"
+      }
+    },
+
+    "IMAGE_SENSOR": {
+      "device_family": "IMAGE_SENSOR",
+      "display_name": "Space-Grade CMOS Image Sensor / Focal Plane Array",
+      "_note": "Space-grade CMOS imagers accumulate radiation-induced dark current over mission life. Thermal dark current dominates pre-launch screening [PE]. Hot-pixel count is a key reliability indicator.",
+      "expected_parameters": ["dark_current_density", "DSNU", "hot_pixel_count", "supply_current", "dark_signal_mean"],
+      "primary_parameter": "dark_current_density",
+      "parameter_units": {
+        "dark_current_density": { "unit": "nA/cm2", "evidence": "[PE] Thermal e-h generation in depletion region; ∝exp(-Eg/2kT); strongly temperature dependent" },
+        "DSNU": { "unit": "DN", "evidence": "[PE] Dark Signal Non-Uniformity: spatial variation of dark current across pixel array" },
+        "hot_pixel_count": { "unit": "count", "evidence": "[PE] Pixels with dark current >10x median; localized crystal defect sites" },
+        "supply_current": { "unit": "mA", "evidence": "[SP] Total sensor supply current" },
+        "dark_signal_mean": { "unit": "DN", "evidence": "[PE] Mean dark signal accumulation per integration time; temperature sensitive" }
+      },
+      "physical_failure_modes": {
+        "DARK_CURRENT_SPIKE_GROWTH": "[PE] Depletion region Shockley-Read-Hall generation at lattice defect sites",
+        "TRAP_ASSISTED_TUNNELING": "[PE] Trap-to-band and band-to-band tunneling at high E-field pixel nodes",
+        "PIXEL_TRANSFER_GATE_LEAKAGE": "[PE] Transfer gate threshold drift from interface trap buildup",
+        "RADIATION_DISPLACEMENT_DAMAGE": "[SP] Proton/heavy-ion damage creating recombination centers; NASA handbook [SP GSFC-STD-7000]"
+      },
+      "spec_limits": {
+        "dark_current_max_nA_cm2": { "value": 10.0, "evidence": "[SA] Synthetic operational limit; foundry/mission specific [UA]" },
+        "hot_pixel_count_max": { "value": 50, "evidence": "[SA] Synthetic threshold; mission image quality requirement [UA]" }
+      },
+      "applicable_test_types": ["THERMAL_BURN_IN", "INITIAL_ELECTRICAL_SCREENING", "THERMO_VACUUM"],
+      "model_routing": {
+        "anomaly_detector": "SpatialNonUniformityDetector",
+        "forecaster": "ThermalTrapGenerationForecaster",
+        "evidence": "[SA] Assigned based on SRH dark current physical basis; validated on synthetic imager lots"
+      }
+    }
+  }
+}

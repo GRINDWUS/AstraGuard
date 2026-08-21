@@ -1,0 +1,32 @@
+{
+  "session_id": "AG-SDK-651F2546",
+  "audit_id": "AUDIT-4D23D3ADCDBF",
+  "timestamp": "2026-08-31T13:41:16.223034",
+  "operator_id": "TEST_QA_OPERATOR",
+  "read_only_guarantee": true,
+  "context": {
+    "status": "PARTIAL_CONTEXT",
+    "resolved_device": "MEMS_GYROSCOPE",
+    "resolved_test": "MEMS_THERMAL_STRESS",
+    "resolved_param": "zero_rate_offset",
+    "confidence": 0.96
+  },
+  "data_quality_score": 1.0,
+  "instrument_health": "INSTRUMENT_HEALTHY",
+  "recommendation": "YELLOW_REVIEW",
+  "evidence_trail": [
+    "[CONTEXT] Resolved Device: MEMS_GYROSCOPE via ResolutionStatus.PARTIAL_CONTEXT (Conf: 0.96)",
+    "[ROUTER] Active Anomaly Model: MultiVariateMahalanobisDetector",
+    "[ROUTER] Active Forecaster: ViscoelasticStressDriftForecaster",
+    "[METRICS] Evaluated 20 components | Green: 18, Yellow: 2, Red: 0",
+    "[BENCHMARK] Chamber Hours Saved: 77.14%"
+  ],
+  "reasons": [
+    "2 components assigned to +48h extended observation due to minor kinetic drift."
+  ],
+  "components_summary": {
+    "GREEN": 18,
+    "YELLOW": 2,
+    "RED": 0
+  }
+}

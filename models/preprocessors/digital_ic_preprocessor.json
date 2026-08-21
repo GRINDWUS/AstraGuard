@@ -1,0 +1,93 @@
+{
+  "pipeline_type": "LeakageSafePreprocessor",
+  "device_family": "DIGITAL_IC",
+  "use_log1p": true,
+  "is_fitted": true,
+  "fit_metadata": {
+    "device_family": "DIGITAL_IC",
+    "use_log1p": true,
+    "n_training_samples": 16000,
+    "n_features": 14,
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "degradation_ratio_24h_0h",
+      "temp_normalized_0h",
+      "temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "ICC_active_mA",
+      "input_leakage_nA",
+      "propagation_delay_ns",
+      "v_offset_24h",
+      "snr_24h"
+    ]
+  },
+  "transformer": {
+    "transformer_type": "Log1pTransformer",
+    "log_features": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "temp_normalized_0h",
+      "temp_normalized_24h"
+    ],
+    "is_fitted": true
+  },
+  "scaler": {
+    "scaler_type": "RobustMADScaler",
+    "feature_names": [
+      "value_0h",
+      "value_24h",
+      "delta_value_0_24h",
+      "growth_rate_per_hour",
+      "degradation_ratio_24h_0h",
+      "temp_normalized_0h",
+      "temp_normalized_24h",
+      "robust_z_score_0h",
+      "robust_z_score_24h",
+      "ICC_active_mA",
+      "input_leakage_nA",
+      "propagation_delay_ns",
+      "v_offset_24h",
+      "snr_24h"
+    ],
+    "medians": {
+      "value_0h": 0.8164261967201165,
+      "value_24h": 6.882285305516563,
+      "delta_value_0_24h": 6.880990886500561,
+      "growth_rate_per_hour": 3.7262862231595815,
+      "degradation_ratio_24h_0h": 770.9483074700258,
+      "temp_normalized_0h": 0.0016364195432866599,
+      "temp_normalized_24h": 0.8168745287121144,
+      "robust_z_score_0h": 0.0,
+      "robust_z_score_24h": -4.2935761283141582e-16,
+      "ICC_active_mA": 24.987499999999997,
+      "input_leakage_nA": 2.0006,
+      "propagation_delay_ns": 12.503,
+      "v_offset_24h": -0.0002,
+      "snr_24h": 35.03
+    },
+    "mads": {
+      "value_0h": 0.07637506294818167,
+      "value_24h": 0.13591747978669472,
+      "delta_value_0_24h": 0.13590583289111965,
+      "growth_rate_per_hour": 0.13281752903274655,
+      "degradation_ratio_24h_0h": 9.189619448193246,
+      "temp_normalized_0h": 0.00022438564200185005,
+      "temp_normalized_24h": 0.07589682051380263,
+      "robust_z_score_0h": 1.0,
+      "robust_z_score_24h": 1.0000000000000007,
+      "ICC_active_mA": 1.4981673000000058,
+      "input_leakage_nA": 0.3025986599999999,
+      "propagation_delay_ns": 0.785777999999999,
+      "v_offset_24h": 0.052484039999999996,
+      "snr_24h": 1.3046879999999932
+    },
+    "is_fitted": true
+  },
+  "artifact_sha256": "9e5f4ad5f572a0411724540f3a9b09ab849cf445bb7e7199fe460d3c72d1cb95"
+}

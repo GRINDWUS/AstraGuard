@@ -1,0 +1,36 @@
+{
+  "platform": "AstraGuard 3.0 Hybrid Reliability Intelligence Platform",
+  "agency_submission": "ISRO SIH #26170",
+  "standards_audited": [
+    "MIL-STD-883 Method 1015",
+    "MIL-STD-883 Method 2012",
+    "ESCC 9000 Level B/S"
+  ],
+  "audit_timestamp": "2026-08-30T10:10:26.240526",
+  "overall_compliance_status": "QUALIFIED_FLIGHT_READY",
+  "audit_items": {
+    "mil_std_1015_thermal_acceleration": {
+      "status": "PASS",
+      "configured_ea_ev": 0.68,
+      "reference_standard": "MIL-STD-883 TM 1015 / ESCC 9000 Section 8.15",
+      "compliance_notes": "Activation energy within 0.60\u20130.80 eV range for sub-micron CMOS oxide aging."
+    },
+    "infant_mortality_distribution": {
+      "status": "PASS",
+      "total_components": 6200,
+      "defect_rate_percent": 3.5,
+      "compliance_notes": "Defect rate aligns with military/space screening yields."
+    },
+    "escc_9000_multi_eye_engine": {
+      "status": "PASS",
+      "policy_version": "policy-3.0",
+      "eyes_verified": [
+        "Eye 1 (Spatial Z)",
+        "Eye 2 (XGB Drift)",
+        "Eye 3A (IsoForest OOD)",
+        "Eye 3B (LSTM Temporal)"
+      ],
+      "compliance_notes": "4-Eye fusion engine ensures zero silent escapes for unknown failure modes."
+    }
+  }
+}
