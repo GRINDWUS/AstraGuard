@@ -143,7 +143,7 @@
     "device_family": "MEMS_GYROSCOPE",
     "failure_mode": "MEMS_STICTION_ONSET",
     "sample_count": 39,
-    "mae": 0.004100333955498781,
+    "mae": 0.0041003339554987655,
     "decisions": {
       "RED": 0,
       "YELLOW": 0,
@@ -157,7 +157,7 @@
     "device_family": "MEMS_GYROSCOPE",
     "failure_mode": "NOMINAL",
     "sample_count": 1902,
-    "mae": 0.002555477306589515,
+    "mae": 0.0025554773065895138,
     "decisions": {
       "RED": 0,
       "YELLOW": 0,
@@ -171,7 +171,7 @@
     "device_family": "MEMS_GYROSCOPE",
     "failure_mode": "PACKAGING_STRESS_RELAXATION",
     "sample_count": 29,
-    "mae": 0.001375995671555074,
+    "mae": 0.0013759956715550755,
     "decisions": {
       "RED": 28,
       "YELLOW": 0,
@@ -199,7 +199,7 @@
     "device_family": "MEMS_GYROSCOPE",
     "failure_mode": "THERMAL_RUNAWAY",
     "sample_count": 19,
-    "mae": 0.0025896926830966233,
+    "mae": 0.002589692683096632,
     "decisions": {
       "RED": 0,
       "YELLOW": 0,
@@ -213,7 +213,7 @@
     "device_family": "IMAGE_SENSOR",
     "failure_mode": "DARK_CURRENT_SPIKE_GROWTH",
     "sample_count": 24,
-    "mae": 3.2109225964245915,
+    "mae": 3.210922596424588,
     "decisions": {
       "RED": 24,
       "YELLOW": 0,
@@ -227,7 +227,7 @@
     "device_family": "IMAGE_SENSOR",
     "failure_mode": "DIELECTRIC_OSCILLATION",
     "sample_count": 18,
-    "mae": 1.5624316707891488,
+    "mae": 1.56243167078915,
     "decisions": {
       "RED": 2,
       "YELLOW": 9,
@@ -255,7 +255,7 @@
     "device_family": "IMAGE_SENSOR",
     "failure_mode": "SPATIAL_OUTLIER",
     "sample_count": 20,
-    "mae": 3.9851132631938513,
+    "mae": 3.98511326319385,
     "decisions": {
       "RED": 20,
       "YELLOW": 0,
