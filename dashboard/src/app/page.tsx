@@ -388,7 +388,7 @@ export default function AstraGuardDashboard() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans flex flex-col">
       {/* Top Header */}
-      <header className="border-b border-slate-800 bg-slate-900/60 px-6 py-4 flex items-center justify-between backdrop-blur-md">
+      <header className="border-b border-slate-800 bg-slate-900/60 px-4 md:px-6 py-3 flex flex-wrap items-center justify-between gap-3 backdrop-blur-md">
         <div className="flex items-center gap-3">
           <div className="p-2 bg-teal-500/10 border border-teal-500/30 rounded-lg text-teal-400">
             <Cpu className="w-6 h-6 animate-pulse" />
@@ -402,9 +402,9 @@ export default function AstraGuardDashboard() {
         </div>
 
         {/* Controls */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-2 md:gap-4">
           {/* Device Context Switcher Badge */}
-          <div className="flex items-center gap-2 bg-slate-900/90 border border-teal-500/40 px-3 py-1.5 rounded-lg text-xs">
+          <div className="hidden sm:flex items-center gap-2 bg-slate-900/90 border border-teal-500/40 px-3 py-1.5 rounded-lg text-xs">
             <Sparkles className="w-4 h-4 text-teal-400 animate-spin" />
             <span className="text-slate-400 font-medium">Context:</span>
             <span className="text-teal-300 font-bold font-mono">{activeContext.resolved_device_family}</span>
@@ -498,20 +498,20 @@ export default function AstraGuardDashboard() {
       </header>
 
       {/* Domain Context Identification & Instrument QA Status Banner */}
-      <div className="bg-slate-900/90 border-b border-slate-800 px-6 py-2 flex items-center justify-between text-xs">
-        <div className="flex items-center gap-6">
+      <div className="bg-slate-900/90 border-b border-slate-800 px-4 md:px-6 py-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div className="flex flex-wrap items-center gap-3 md:gap-6">
           <div className="flex items-center gap-2">
             <Compass className="w-4 h-4 text-teal-400" />
-            <span className="text-slate-400">Resolved Device:</span>
+            <span className="text-slate-400">Resolved:</span>
             <span className="text-white font-bold">{activeContext.resolved_device_family}</span>
-            <span className="text-slate-500">({getParamLabel(activeContext.resolved_device_family)})</span>
+            <span className="text-slate-500 hidden sm:inline">({getParamLabel(activeContext.resolved_device_family)})</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
             <span className="text-slate-400">Identity Source:</span>
             <span className="text-emerald-300 font-semibold">{activeContext.identification_source}</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <Zap className="w-4 h-4 text-amber-400" />
             <span className="text-slate-400">Model Router:</span>
             <span className="text-amber-300 font-mono">{activeContext.recommended_ml_model}</span>
@@ -524,7 +524,7 @@ export default function AstraGuardDashboard() {
               : "bg-rose-500/20 text-rose-300 border-rose-500/40"
           }`}>
             {instrumentHealth.is_instrument_healthy ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> : <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />}
-            <span>Instrument QA: {instrumentHealth.is_instrument_healthy ? "NORMAL (0 Faults)" : instrumentHealth.fault_type}</span>
+            <span className="hidden sm:inline">Instrument QA: </span>{instrumentHealth.is_instrument_healthy ? "OK" : instrumentHealth.fault_type}
           </div>
         </div>
       </div>
@@ -554,8 +554,8 @@ export default function AstraGuardDashboard() {
         })}
       </div>
 
-      {/* Tabs */}
-      <div className="bg-slate-900/40 border-b border-slate-800 px-6 flex gap-6 text-sm font-medium">
+      {/* Tabs — horizontally scrollable on mobile */}
+      <div className="bg-slate-900/40 border-b border-slate-800 px-4 md:px-6 flex gap-4 md:gap-6 text-xs md:text-sm font-medium overflow-x-auto">
         <button
           onClick={() => setActiveTab("operations")}
           className={`py-3 flex items-center gap-2 border-b-2 transition-all ${
@@ -599,10 +599,10 @@ export default function AstraGuardDashboard() {
       </div>
 
       {/* Main Grid */}
-      <main className="flex-1 p-6 grid grid-cols-12 gap-6 overflow-y-auto">
+      <main className="flex-1 p-3 md:p-6 grid grid-cols-12 gap-4 md:gap-6 overflow-y-auto">
         
-        {/* Metric Cards */}
-        <div className="col-span-12 grid grid-cols-5 gap-4">
+        {/* Metric Cards — 2 cols on mobile, 5 on desktop */}
+        <div className="col-span-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
           <div className="bg-slate-900/60 border border-slate-800 p-4 rounded-xl">
             <div className="text-xs text-slate-400 font-medium uppercase">Active Lot / Components</div>
             <div className="text-xl font-bold text-white mt-1">{selectedLot}</div>
@@ -640,17 +640,17 @@ export default function AstraGuardDashboard() {
           </div>
         </div>
 
-        {/* Tab 1: Live Operations */}
+        {/* Tab 1: Live Operations — stacks on mobile */}
         {activeTab === "operations" && (
           <>
-            <div className="col-span-8 bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col">
+            <div className="col-span-12 lg:col-span-8 bg-slate-900/60 border border-slate-800 rounded-xl p-3 md:p-5 flex flex-col">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-sm font-semibold text-white flex items-center gap-2">
                   <Activity className="w-4 h-4 text-teal-400" /> Live ATE Streaming & Context Identification
                 </h2>
 
-                {/* Device Filter Pills */}
-                <div className="flex items-center gap-1 bg-slate-950 border border-slate-800 p-1 rounded-lg text-[11px]">
+              {/* Device Filter Pills — scrollable */}
+                <div className="flex items-center gap-1 bg-slate-950 border border-slate-800 p-1 rounded-lg text-[11px] overflow-x-auto max-w-full">
                   {["ALL", "DIGITAL_IC", "MEMS_GYROSCOPE", "IMAGE_SENSOR", "PRECISION_VOLTAGE_REF"].map(fam => (
                     <button
                       key={fam}
@@ -667,8 +667,9 @@ export default function AstraGuardDashboard() {
                 </div>
               </div>
 
-              <div className="flex-1 overflow-y-auto">
-                <table className="w-full text-left text-xs">
+              {/* Table — horizontal scroll on mobile */}
+              <div className="flex-1 overflow-y-auto overflow-x-auto">
+                <table className="w-full min-w-[640px] text-left text-xs">
                   <thead className="text-slate-400 border-b border-slate-800 bg-slate-900/80 sticky top-0">
                     <tr>
                       <th className="py-2 px-3">Component ID</th>
@@ -711,7 +712,7 @@ export default function AstraGuardDashboard() {
               </div>
             </div>
 
-            <div className="col-span-4 bg-slate-900/60 border border-slate-800 rounded-xl p-5 flex flex-col">
+            <div className="col-span-12 lg:col-span-4 bg-slate-900/60 border border-slate-800 rounded-xl p-4 md:p-5 flex flex-col">
               <h2 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
                 <ShieldAlert className="w-4 h-4 text-amber-400" /> Active Component Inspector
               </h2>
