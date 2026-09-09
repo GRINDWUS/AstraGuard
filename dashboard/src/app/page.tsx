@@ -8,6 +8,20 @@ import {
 } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 
+// PS #26170 — All supported parameter types per device family
+const DEVICE_PARAM_MAP: Record<string, { param: string; unit: string; color: string }> = {
+  DIGITAL_IC:             { param: "IDDQ Quiescent Current",  unit: "µA",     color: "teal"   },
+  MIXED_SIGNAL_IC:        { param: "ICC Active Supply",        unit: "µA",     color: "cyan"   },
+  MEMS_GYROSCOPE:         { param: "Zero-Rate Bias Offset",    unit: "deg/hr", color: "amber"  },
+  IMAGE_SENSOR:           { param: "Dark Current Density",     unit: "nA/cm²", color: "purple" },
+  PRECISION_VOLTAGE_REF:  { param: "VREF Output Drift",        unit: "mV",     color: "rose"   },
+};
+
+const getParamLabel = (family: string) => {
+  const p = DEVICE_PARAM_MAP[family];
+  return p ? `${p.param} (${p.unit})` : "IDDQ (µA)";
+};
+
 interface ComponentData {
   component_id: string;
   device_family?: string;
@@ -59,6 +73,8 @@ export default function AstraGuardDashboard() {
   const [selectedDeviceFilter, setSelectedDeviceFilter] = useState<string>("ALL");
   
   const [processedComponents, setProcessedComponents] = useState<ComponentData[]>([]);
+  const [deviceFamilyStats, setDeviceFamilyStats] = useState<Record<string, number>>({});
+  const [lastSeenFamily, setLastSeenFamily] = useState<string>("DIGITAL_IC");
   const [selectedComponent, setSelectedComponent] = useState<ComponentData | null>(null);
   const [shapData, setShapData] = useState<any>(null);
   const [telemetryReport, setTelemetryReport] = useState<any>(null);
@@ -310,6 +326,21 @@ export default function AstraGuardDashboard() {
             return nextList;
           });
 
+          // Auto-update Context Resolver banner when device family changes
+          const incomingFamily = data.device_family || "DIGITAL_IC";
+          setLastSeenFamily(prev => {
+            if (prev !== incomingFamily) {
+              const paramMap = DEVICE_PARAM_MAP[incomingFamily];
+              const paramKeys = paramMap ? [paramMap.param] : ["IDDQ"];
+              runContextResolution(incomingFamily, paramKeys);
+            }
+            return incomingFamily;
+          });
+          setDeviceFamilyStats(prev => ({
+            ...prev,
+            [incomingFamily]: (prev[incomingFamily] || 0) + 1
+          }));
+
           setSelectedComponent(curr => curr || newComp);
           setStats(prev => {
             const nextProcessed = prev.processed + 1;
@@ -473,7 +504,7 @@ export default function AstraGuardDashboard() {
             <Compass className="w-4 h-4 text-teal-400" />
             <span className="text-slate-400">Resolved Device:</span>
             <span className="text-white font-bold">{activeContext.resolved_device_family}</span>
-            <span className="text-slate-500">({activeContext.extracted_features?.primary_parameter} in {activeContext.extracted_features?.unit})</span>
+            <span className="text-slate-500">({getParamLabel(activeContext.resolved_device_family)})</span>
           </div>
           <div className="flex items-center gap-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -486,7 +517,6 @@ export default function AstraGuardDashboard() {
             <span className="text-amber-300 font-mono">{activeContext.recommended_ml_model}</span>
           </div>
         </div>
-
         <div className="flex items-center gap-3">
           <div className={`px-3 py-1 rounded-md border font-semibold flex items-center gap-1.5 ${
             instrumentHealth.is_instrument_healthy 
@@ -497,6 +527,31 @@ export default function AstraGuardDashboard() {
             <span>Instrument QA: {instrumentHealth.is_instrument_healthy ? "NORMAL (0 Faults)" : instrumentHealth.fault_type}</span>
           </div>
         </div>
+      </div>
+
+      {/* Multi-Device Parameter Monitor — PS #26170 */}
+      <div className="bg-slate-950/80 border-b border-slate-800/60 px-6 py-1.5 flex items-center gap-2 overflow-x-auto text-[10px]">
+        <span className="text-slate-500 font-semibold shrink-0 uppercase tracking-wider">Parameter Resolver</span>
+        <span className="text-slate-700 shrink-0">|</span>
+        {Object.entries(DEVICE_PARAM_MAP).map(([family, info]) => {
+          const count = deviceFamilyStats[family] || 0;
+          const isActive = lastSeenFamily === family;
+          return (
+            <div key={family} className={`flex items-center gap-1.5 px-2 py-0.5 rounded border shrink-0 transition-all ${
+              isActive
+                ? "bg-teal-500/15 border-teal-500/40 text-teal-200"
+                : count > 0
+                ? "bg-slate-800/50 border-slate-700 text-slate-400"
+                : "bg-transparent border-slate-800/50 text-slate-600"
+            }`}>
+              <span className="font-semibold tracking-wide">{family.replace(/_/g, "_")}</span>
+              <span className="text-slate-600">·</span>
+              <span className="font-mono text-slate-400">{info.param}</span>
+              <span className="text-slate-600">({info.unit})</span>
+              {count > 0 && <span className="ml-1 bg-slate-700 text-slate-300 px-1 rounded">{count}</span>}
+            </div>
+          );
+        })}
       </div>
 
       {/* Tabs */}
@@ -618,11 +673,11 @@ export default function AstraGuardDashboard() {
                     <tr>
                       <th className="py-2 px-3">Component ID</th>
                       <th className="py-2 px-3">Family Context</th>
-                      <th className="py-2 px-3">0h Param</th>
-                      <th className="py-2 px-3">24h Param</th>
+                      <th className="py-2 px-3">0h {DEVICE_PARAM_MAP[selectedDeviceFilter]?.unit || "µA"}</th>
+                      <th className="py-2 px-3">24h {DEVICE_PARAM_MAP[selectedDeviceFilter]?.unit || "µA"}</th>
                       <th className="py-2 px-3">96h Checkpoint</th>
                       <th className="py-2 px-3">Pred 168h</th>
-                      <th className="py-2 px-3">Z-Score</th>
+                      <th className="py-2 px-3">Z-Score (σ)</th>
                       <th className="py-2 px-3">Tier</th>
                     </tr>
                   </thead>
