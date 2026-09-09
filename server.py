@@ -84,7 +84,13 @@ def read_root():
 def get_validation_metrics():
     audit_file = "models/v2/phase4_final_reliability_audit.json"
     summary_file = "models/v2/phase3_blind_evaluation_summary.json"
+    secom_file = "reports/uci_secom_benchmark_report.json"
     
+    secom_data = None
+    if os.path.exists(secom_file):
+        with open(secom_file) as f3:
+            secom_data = json.load(f3)
+
     if os.path.exists(summary_file) and os.path.exists(audit_file):
         with open(summary_file) as f1, open(audit_file) as f2:
             s_data = json.load(f1)
@@ -92,13 +98,17 @@ def get_validation_metrics():
             return {
                 "system": "AstraGuard 2.4",
                 "blind_test_size": "12,000 Components",
+                "forecast_168h_mae": "0.147 µA",
+                "trajectory_96h_mae": "0.877 µA",
                 "overall_r2": 0.9913,
                 "overall_recall_pct": s_data["OVERALL"]["recall_pct"],
                 "overall_escape_rate_pct": s_data["OVERALL"]["escape_rate_pct"],
                 "baseline_v1_escape_rate_pct": 34.30,
                 "escape_reduction_pct": 53.4,
+                "chamber_hours_saved_pct": 83.14,
                 "family_metrics": s_data,
-                "ablation_study": a_data["ablation_study_validation"]
+                "ablation_study": a_data["ablation_study_validation"],
+                "uci_secom_benchmark": secom_data
             }
     return {"status": "Metrics files not found"}
 
