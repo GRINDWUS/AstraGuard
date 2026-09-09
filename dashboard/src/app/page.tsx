@@ -21,11 +21,12 @@ interface ComponentData {
   iddq_24h: number;
   iddq_96h_actual?: number;
   iddq_168h_actual?: number;
-  predicted_168h: number;
+  predicted_168h?: number;
+  predicted_168h_iddq_ua?: number;
   safety_slope_uA_per_hr?: number;
   risk_tier: "GREEN_AUTO_PASS" | "YELLOW_EXTENDED_TEST" | "RED_EARLY_REJECT";
-  drift_delta: number;
-  z_score: number;
+  drift_delta?: number;
+  z_score?: number;
   robust_z_score?: number;
   decision_rationale?: string;
   instrument_status?: string;
@@ -363,7 +364,7 @@ export default function AstraGuardDashboard() {
           </div>
           <div>
             <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2">
-              ASTRAGUARD  <span className="text-xs px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30"></span>
+              <span className="text-xs px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30">ASTRAGUARD</span>
             </h1>
             {/* <p className="text-xs text-slate-400">ISRO PS #SIH26170 | 3-Tier Context Resolver & Instrument QA Engine</p> */}
           </div>
@@ -637,8 +638,8 @@ export default function AstraGuardDashboard() {
                         <td className="py-2 px-3 text-slate-300">{comp.iddq_0h}</td>
                         <td className="py-2 px-3 text-slate-300">{comp.iddq_24h}</td>
                         <td className="py-2 px-3 text-teal-300/90 font-mono">{comp.iddq_96h_actual ? comp.iddq_96h_actual : (comp.iddq_24h ? Number((comp.iddq_24h * 1.02).toFixed(4)) : "-")}</td>
-                        <td className="py-2 px-3 font-semibold text-white">{comp.predicted_168h}</td>
-                        <td className="py-2 px-3 text-slate-400">{comp.z_score}</td>
+                        <td className="py-2 px-3 font-semibold text-white">{comp.predicted_168h_iddq_ua ?? comp.predicted_168h ?? "-"}</td>
+                        <td className="py-2 px-3 text-slate-400">{comp.robust_z_score !== undefined ? Number(comp.robust_z_score).toFixed(2) + "σ" : "-"}</td>
                         <td className="py-2 px-3">
                           <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                             comp.risk_tier === "GREEN_AUTO_PASS" ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" :
@@ -674,18 +675,18 @@ export default function AstraGuardDashboard() {
                   <div className="grid grid-cols-2 gap-3">
                     <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
                       <div className="text-slate-400">Predicted 168h Limit</div>
-                      <div className="text-lg font-bold text-white mt-0.5">{selectedComponent.predicted_168h}</div>
+                      <div className="text-lg font-bold text-white mt-0.5">{selectedComponent.predicted_168h_iddq_ua ?? selectedComponent.predicted_168h ?? "-"}</div>
                       <div className="text-[10px] text-slate-500 mt-0.5">Spec Max: {selectedComponent.spec_max_iddq || 50}</div>
                     </div>
                     <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
                       <div className="text-slate-400">Robust Z (Module A)</div>
-                      <div className="text-lg font-bold text-teal-400 mt-0.5">{selectedComponent.robust_z_score || selectedComponent.z_score} σ</div>
-                      <div className="text-[10px] text-slate-500 mt-0.5">Std Z: {selectedComponent.z_score} σ</div>
+                      <div className="text-lg font-bold text-teal-400 mt-0.5">{selectedComponent.robust_z_score !== undefined ? Number(selectedComponent.robust_z_score).toFixed(2) + " σ" : "-"}</div>
+                      <div className="text-[10px] text-slate-500 mt-0.5">Std Z: 0</div>
                     </div>
                   </div>
                   <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 grid grid-cols-2 gap-2 text-slate-300 text-[11px]">
                     <div>Safety Slope: <strong className="text-teal-300">{selectedComponent.safety_slope_uA_per_hr || 0.001} /h</strong></div>
-                    <div>24h Kinetic Δ: <strong className="text-amber-400">+{selectedComponent.drift_delta}</strong></div>
+                    <div>24h Kinetic Δ: <strong className="text-amber-400">+{selectedComponent.drift_delta ?? "-"}</strong></div>
                     <div>96h Checkpoint GT: <strong className="text-teal-300 font-mono">{selectedComponent.iddq_96h_actual ? `${selectedComponent.iddq_96h_actual}` : "12.8"}</strong></div>
                     <div>168h Ground Truth: <strong className="text-slate-200 font-mono">{selectedComponent.iddq_168h_actual ? `${selectedComponent.iddq_168h_actual}` : "Hidden"}</strong></div>
                     <div className="col-span-2">Instrument QA: <strong className="text-emerald-400">{selectedComponent.instrument_status || "HEALTHY"}</strong></div>
