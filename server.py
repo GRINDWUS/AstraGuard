@@ -27,9 +27,8 @@ from astraguard_core.preprocessing import LeakageSafePreprocessor
 from astraguard_core.module_a import ModuleAScreener
 
 app = FastAPI(
-    title="AstraGuard 2.4 API - ISRO Reliability & 96h Telemetry Engine",
-    description="Physics-Informed Predictive Semiconductor Burn-In & 96h Forecast Engine",
-    version="2.4.0"
+    title="AstraGuard API",
+    description="Physics-Informed Predictive Semiconductor Burn-In & 168h Forecast Engine"
 )
 
 # Enable CORS for Next.js Frontend
@@ -71,13 +70,12 @@ def safe_float(val) -> float:
     except:
         return 0.0
 
-@app.get("/", summary="AstraGuard 2.4 API Root")
+@app.get("/", summary="AstraGuard API Root")
 def read_root():
     return {
-        "system": "AstraGuard 2.4 Staged Prognostic Reliability Engine",
+        "system": "AstraGuard Staged Prognostic Reliability Engine",
         "agency": "ISRO PS #26170",
-        "status": "OPERATIONAL_FROZEN",
-        "version": "2.4.0"
+        "status": "OPERATIONAL_FROZEN"
     }
 
 @app.get("/api/v1/analytics/validation-metrics", summary="Get Master PS #26170 & Phase 4 Audit Results")
@@ -96,7 +94,7 @@ def get_validation_metrics():
             s_data = json.load(f1)
             a_data = json.load(f2)
             return {
-                "system": "AstraGuard 2.4",
+                "system": "AstraGuard",
                 "blind_test_size": "12,000 Components",
                 "forecast_168h_mae": "0.147 µA",
                 "trajectory_96h_mae": "0.877 µA",
