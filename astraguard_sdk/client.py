@@ -19,7 +19,8 @@ from astraguard_sdk.schema import (
     AnalysisSessionMetadata,
     SDKAnalysisResult,
 )
-from astraguard_sdk.adapters import CSVATEAdapter, JSONATEAdapter
+from astraguard_sdk.adapters import CSVATEAdapter, JSONATEAdapter, STDFATEAdapter
+from astraguard_sdk.adapters.stdf_validator import STDFValidator
 from astraguard_sdk.integrity import DataIntegrityValidator
 from astraguard_sdk.policy import AstraGuardPolicyEngine
 from astraguard_sdk.audit import AstraGuardAuditLogger
@@ -44,6 +45,8 @@ class AstraGuardClient:
         self.operator_id = operator_id
         self.csv_adapter = CSVATEAdapter()
         self.json_adapter = JSONATEAdapter()
+        self.stdf_adapter = STDFATEAdapter()
+        self.stdf_validator = STDFValidator()
         self.integrity_validator = DataIntegrityValidator()
         self.explicit_parser = ExplicitMetadataParser()
         self.behavioral_infer = BehavioralInferenceEngine()
@@ -66,14 +69,24 @@ class AstraGuardClient:
         )
 
         # Step 1: Adapt input payload to canonical MeasurementRecords
-        if isinstance(data, (str, pd.DataFrame)):
+        if isinstance(data, str) and data.lower().endswith((".stdf", ".std")):
+            # Native STDF v4 binary path — validate then parse
+            validation = self.stdf_validator.validate_file(data)
+            if validation.recommendation == "REJECT":
+                raise ValueError(
+                    f"STDF validation REJECT for '{data}': "
+                    + "; ".join(i.message for i in validation.issues if i.severity == "ERROR")
+                )
+            records = self.stdf_adapter.parse(data)
+            df_lot = self.stdf_adapter.to_dataframe(records)
+        elif isinstance(data, (str, pd.DataFrame)):
             records = self.csv_adapter.parse(data)
             df_lot = self.csv_adapter.to_dataframe(records)
         elif isinstance(data, (dict, list)):
             records = self.json_adapter.parse(data)
             df_lot = self.json_adapter.to_dataframe(records)
         else:
-            raise ValueError("Unsupported data payload. Provide CSV path, DataFrame, or JSON.")
+            raise ValueError("Unsupported data payload. Provide STDF/CSV path, DataFrame, or JSON.")
 
         # Step 2: Data Integrity & Instrument QA Filtering
         valid_records, quality_score, issues, inst_status = self.integrity_validator.validate_and_normalize(records)
