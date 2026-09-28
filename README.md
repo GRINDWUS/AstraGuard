@@ -101,6 +101,27 @@ To demonstrate methodology generalization outside simulator data, AstraGuard was
 
 ---
 
+## 🧰 Tech Stack
+
+| Layer | Technology | Version | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Language** | ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) Python | 3.11+ | Core ML engine, backend, data pipelines |
+| **ML / AI** | ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?logo=scikitlearn&logoColor=white) scikit-learn | 1.3.0 | Regression, outlier screening models |
+| **ML / AI** | ![XGBoost](https://img.shields.io/badge/XGBoost-189ABF) XGBoost | 1.7.5 | Gradient-boosted trajectory regressors |
+| **ML / AI** | ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white) PyTorch | 2.0.1 | Deep learning model backbone |
+| **ML / AI** | ![SHAP](https://img.shields.io/badge/SHAP-Explainability-blueviolet) SHAP | 0.42.1 | Game-theoretic physics attribution |
+| **Data** | ![Pandas](https://img.shields.io/badge/Pandas-150458?logo=pandas&logoColor=white) Pandas | 2.0.3 | Telemetry ingestion & feature pipelines |
+| **Data** | ![NumPy](https://img.shields.io/badge/NumPy-013243?logo=numpy&logoColor=white) NumPy | 1.24.3 | Numerical computation |
+| **Data** | ![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?logo=scipy&logoColor=white) SciPy | 1.11.0 | Kinetic statistics & signal processing |
+| **Backend** | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white) FastAPI | 0.103.0 | REST & WebSocket streaming server |
+| **Backend** | ![Uvicorn](https://img.shields.io/badge/Uvicorn-ASGI-499848) Uvicorn | 0.23.0 | ASGI server runtime |
+| **Backend** | ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?logo=pydantic&logoColor=white) Pydantic | 2.0.3 | Data validation & schema enforcement |
+| **Frontend** | ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white) Next.js | 14.0 | Operator dashboard & live streaming UI |
+| **Testing** | ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?logo=pytest&logoColor=white) pytest | 7.4.0 | Unit & integration test suite (23/23) |
+| **Standards** | MIL-STD-883 / AEC-Q100 / MIL-HDBK-217F | — | Aerospace qualification compliance |
+
+---
+
 ## ⚡ Quick Start Guide
 
 ### 1. Prerequisites & Installation
